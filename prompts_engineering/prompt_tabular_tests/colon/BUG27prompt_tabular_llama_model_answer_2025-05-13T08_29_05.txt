@@ -1,0 +1,118 @@
+QUESTIONS:
+What is connected to the Workstation-2:eth1?
+What is connected to the Switch-3:port-5?
+What is connected to the Switch-2:port-7?
+What is connected to the Switch-2:port-20?
+What is connected to the Switch-1:port-13?
+What is connected to the Switch-1:port-24?
+What is connected to the Switch-2:port-9?
+What is connected to the Switch-2:port-11?
+What is connected to the Switch-1:port-3?
+What is connected to the Switch-3:port-10?
+What is connected to the Switch-1:port-10?
+What is connected to the Switch-2:port-13?
+What is connected to the Switch-3:port-4?
+What is connected to the SBC-2:eth1?
+What is connected to the SBC-2:eth2?
+What is connected to the Switch-1:port-12?
+What is connected to the SBC-2:eth0?
+What is connected to the Workstation-1:eth0?
+What is connected to the SBC-1:eth2?
+What is connected to the Switch-2:port-6?
+What is connected to the Workstation-3:eth0?
+What is connected to the Switch-1:port-17?
+What is connected to the Switch-2:port-1?
+What is connected to the Switch-2:port-5?
+What is connected to the Switch-2:port-15?
+What is connected to the Switch-3:port-21?
+What is connected to the Switch-1:port-5?
+What is connected to the NAS:eth1?
+What is connected to the Switch-2:port-3?
+What is connected to the Switch-2:port-23?
+
+MODEL ANSWER:
+Here are the answers to the given questions:
+
+1. What is connected to the Workstation-2:eth1?
+A: Workstation-2:eth1 is connected to Switch-2:port-5.
+
+2. What is connected to the Switch-3:port-5?
+A: Nothing
+
+3. What is connected to the Switch-2:port-7?
+A: Workstation-3:eth1
+
+4. What is connected to the Switch-2:port-20?
+A: The port-20 network interface does not exist for Switch-2
+
+5. What is connected to the Switch-1:port-13?
+A: Nothing
+
+6. What is connected to the Switch-1:port-24?
+A: Server:eth0
+
+7. What is connected to the Switch-2:port-9?
+A: Nothing
+
+8. What is connected to the Switch-2:port-11?
+A: Nothing
+
+9. What is connected to the Switch-1:port-3?
+A: Console-3:eth0
+
+10. What is connected to the Switch-3:port-10?
+A: The port-10 network interface does not exist for Switch-3
+
+11. What is connected to the Switch-1:port-10?
+A: The port-10 network interface does not exist for Switch-1
+
+12. What is connected to the Switch-2:port-13?
+A: Workstation-3:eth1
+
+13. What is connected to the Switch-3:port-4?
+A: The port-4 network interface does not exist for Switch-3
+
+14. What is connected to the SBC-2:eth1?
+A: Nothing
+
+15. What is connected to the SBC-2:eth2?
+A: The eth2 network interface does not exist for SBC-2
+
+16. What is connected to the Switch-1:port-12?
+A: Switch-2:port-12
+
+17. What is connected to the SBC-2:eth0?
+A: Switch-3:eth0
+
+18. What is connected to the Workstation-1:eth0?
+A: Switch-2:eth0
+
+19. What is connected to the SBC-1:eth2?
+A: The eth2 network interface does not exist for SBC-1
+
+20. What is connected to the Switch-2:port-6?
+A: Workstation-3:eth0
+
+21. What is connected to the Workstation-3:eth0?
+A: Switch-2:port-6
+
+22. What is connected to the Switch-1:port-17?
+A: Nothing
+
+23. What is connected to the Switch-2:port-1?
+A: Switch-2:port-1 is connected to Workstation-1:eth0
+
+24. What is connected to the Switch-2:port-5?
+A: Workstation-2:eth1 (same as question 1)
+
+25. What is connected to the Switch-2:port-15?
+A: The port-15 network interface does not exist for Switch-2
+
+26. What is connected to the Switch-3:port-21?
+A: The port-21 network interface does not exist for Switch-3
+
+27. What is connected to the Switch-1:port-5?
+A: NAS:eth1
+
+INFO:
+time (seconds): elapsed for setup 4.9918, elapsed for generation 78.9107, total elapsed 83.9024

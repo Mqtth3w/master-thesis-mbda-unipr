@@ -1,0 +1,111 @@
+QUESTIONS:
+What is connected to the Switch-1-port-3?
+What is connected to the Switch-3-port-10?
+What is connected to the Switch-2-port-7?
+What is connected to the Switch-2-port-13?
+What is connected to the Switch-3-port-16?
+What is connected to the Switch-1-port-9?
+What is connected to the Console-2-eth0?
+What is connected to the Switch-3-port-24?
+What is connected to the Switch-1-port-10?
+What is connected to the Switch-3-port-18?
+What is connected to the SBC-3-eth0?
+What is connected to the Workstation-3-eth0?
+What is connected to the Switch-2-port-14?
+What is connected to the Switch-2-port-17?
+What is connected to the Switch-3-port-1?
+What is connected to the Switch-2-port-2?
+What is connected to the Switch-1-port-16?
+What is connected to the Switch-1-port-22?
+What is connected to the Workstation-3-eth1?
+What is connected to the Server-eth0?
+What is connected to the Switch-3-port-13?
+What is connected to the SBC-2-eth0?
+What is connected to the SBC-1-eth2?
+What is connected to the Switch-1-port-23?
+What is connected to the Switch-2-port-20?
+
+MODEL ANSWER:
+ Here are the answers to your questions:
+
+1. What is connected to Switch-1-port-3?
+   A: Console-3-eth0
+
+2. What is connected to Switch-3-port-10?
+   A: Nothing
+
+3. What is connected to Switch-2-port-7?
+   A: Workstation-3-eth1
+
+4. What is connected to Switch-2-port-13?
+   A: Nothing
+
+5. What is connected to Switch-3-port-16?
+   A: Nothing
+
+6. What is connected to Switch-1-port-9?
+   A: Nothing
+
+7. What is connected to Console-2-eth0?
+   A: Switch-1-port-2
+
+8. What is connected to Switch-3-port-24?
+   A: SBC-1-eth0
+
+9. What is connected to Switch-1-port-10?
+   A: Nothing
+
+10. What is connected to Switch-3-port-18?
+    A: Nothing
+
+11. What is connected to SBC-3-eth0?
+    A: Nothing
+
+12. What is connected to Workstation-3-eth0?
+    A: Switch-2-port-6
+
+13. What is connected to Switch-2-port-14?
+    A: Workstation-1-eth1
+
+14. What is connected to Switch-2-port-17?
+    A: Nothing
+
+15. What is connected to Switch-3-port-1?
+    A: Switch-2-port-12
+
+16. What is connected to Switch-2-port-2?
+    A: NAS-eth1
+
+17. What is connected to Switch-1-port-16?
+    A: Nothing
+
+18. What is connected to Switch-1-port-22?
+    A: Nothing
+
+19. What is connected to Workstation-3-eth1?
+    A: Switch-2-port-7
+
+20. What is connected to the Server-eth0?
+    A: Switch-1-port-24
+
+21. What is connected to the Switch-3-port-13?
+    A: Nothing
+
+22. What is connected to the SBC-2-eth0?
+    A: Switch-3-port-6
+
+23. What is connected to the SBC-1-eth2?
+    A: Nothing (eth2 does not exist for SBC-1)
+
+24. What is connected to the Switch-1-port-23?
+    A: Nothing
+
+25. What is connected to the Switch-2-port-20?
+    A: SBC-3-eth0
+
+INFO:
+time (seconds): elapsed for setup 8.6171, elapsed for generation 83.3279, total elapsed 91.945
+
+AUTOMATIC EVALUATION:
+Correct questions: 25/25 (100.0%)
+Correct answers 18/25 (72.0%)

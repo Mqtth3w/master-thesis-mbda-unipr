@@ -1,0 +1,138 @@
+QUESTIONS:
+What is connected to the Switch-port-22?
+What is connected to the Switch-port-18?
+What is connected to the Switch-port-15?
+What is connected to the Switch-port-9?
+What is connected to the Switch-port-17?
+What is connected to the Console-2-eth0?
+What is connected to the Workstation-1-eth0?
+What is connected to the Switch-port-10?
+What is connected to the Server-eth0?
+What is connected to the Switch-port-2?
+What is connected to the Switch-port-23?
+What is connected to the Console-1-eth0?
+What is connected to the Switch-port-7?
+What is connected to the Switch-port-3?
+What is connected to the Console-3-eth0?
+What is connected to the Switch-port-16?
+What is connected to the Switch-port-11?
+What is connected to the Switch-port-19?
+What is connected to the Workstation-1-eth1?
+What is connected to the Switch-port-24?
+What is connected to the Switch-port-8?
+What is connected to the Switch-port-20?
+What is connected to the Switch-port-13?
+What is connected to the Switch-port-6?
+What is connected to the Switch-port-21?
+What is connected to the NAS-eth0?
+What is connected to the Switch-port-5?
+What is connected to the NAS-eth1?
+What is connected to the Workstation-2-eth0?
+What is connected to the Switch-port-14?
+What is connected to the Switch-port-1?
+What is connected to the Switch-port-12?
+What is connected to the Switch-port-4?
+What is connected to the Workstation-2-eth1?
+
+MODEL ANSWER:
+Q: What is connected to the Switch-port-22?
+A: Nothing
+
+Q: What is connected to the Switch-port-18?
+A: Nothing
+
+Q: What is connected to the Switch-port-15?
+A: Workstation-2-eth0
+
+Q: What is connected to the Switch-port-9?
+A: Nothing
+
+Q: What is connected to the Switch-port-17?
+A: Workstation-3-eth1
+
+Q: What is connected to the Console-2-eth0?
+A: Switch-port-2
+
+Q: What is connected to the Workstation-1-eth0?
+A: Switch-port-12
+
+Q: What is connected to the Switch-port-10?
+A: Nothing
+
+Q: What is connected to the Server-eth0?
+A: Switch-port-24
+
+Q: What is connected to the Switch-port-2?
+A: Console-2-eth0
+
+Q: What is connected to the Switch-port-23?
+A: Nothing
+
+Q: What is connected to the Console-1-eth0?
+A: Switch-port-1
+
+Q: What is connected to the Switch-port-7?
+A: Nothing
+
+Q: What is connected to the Switch-port-3?
+A: Console-3-eth0
+
+Q: What is connected to the Console-3-eth0?
+A: Switch-port-3
+
+Q: What is connected to the Switch-port-16?
+A: Nothing
+
+Q: What is connected to the Switch-port-11?
+A: NAS-eth0
+
+Q: What is connected to the Switch-port-19?
+A: Nothing
+
+Q: What is connected to the Workstation-1-eth1?
+A: Switch-port-13
+
+Q: What is connected to the Switch-port-24?
+A: Server-eth0
+
+Q: What is connected to the Switch-port-8?
+A: Nothing
+
+Q: What is connected to the Switch-port-20?
+A: Nothing
+
+Q: What is connected to the Switch-port-13?
+A: Workstation-1-eth1
+
+Q: What is connected to the Switch-port-6?
+A: Nothing
+
+Q: What is connected to the Switch-port-21?
+A: Nothing
+
+Q: What is connected to the NAS-eth0?
+A: Switch-port-11
+
+Q: What is connected to the Switch-port-5?
+A: Console-1-eth0
+
+Q: What is connected to the NAS-eth1?
+A: Nothing
+
+Q: What is connected to the Workstation-2-eth0?
+A: Switch-port-14
+
+Q: What is connected to the Switch-port-1?
+A: Console-2-eth0
+
+Q: What is connected to the Switch-port-12?
+A: Workstation-1-eth0
+
+Q: What is connected to the Switch-port-4?
+A: Nothing
+
+Q: What is connected to the Workstation-2-eth1?
+A: Switch-port-15
+
+INFO:
+time (seconds): elapsed for setup 5.1378, elapsed for generation 52.0798, total elapsed 57.2176
