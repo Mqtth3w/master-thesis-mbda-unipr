@@ -1,0 +1,87 @@
+Your task:
+You will be given a network topology in a tabular format. Your job is to understand the structure and answer the questions that follow.
+Use the format shown in the examples to give your answers, do not add additional, inconsistent or unrelated information. Use the table to understand and trace connections.
+
+Critical Rules:
+1. Connections are bidirectional: If one device says it's connected to another, the other must also list the same connection. Every connection appears twice in the table (A→B and B→A).
+2. Interface validation:
+   - If an interface does NOT exist (e.g., Workstation-3-eth2), answer: "The {interface} network interface does not exist for {device}".
+   - If an interface exists but is unconnected, answer: "Nothing".
+3. Naming syntax:
+   - Devices with numbers (e.g., Switch-1, Switch-2, Console-3, SBC-2) are different from each other, especially devices of the same type.
+   - Interfaces are named like {device}:{interface} (e.g., Switch-1:port-14, Server:eth0).
+
+Network components:
+Switch-1, Switch-2 and Switch-3 with 24 ports each.
+Console-1, Console-2 and Console-3 each with its own network interface eth0.
+Workstation-1, Workstation-2 and Workstation-3 each with its own two network interfaces eth0 and eth1.
+Server with its own network interface eth0.
+NAS with its two network interfaces eth0 and eth1.
+SBC-1, SBC-2 and SBC-3 each with its own network interfaces eth0, eth1 and eth2.
+Unspecified components do not exist. While existing components, not specified in the following connection table, are not related to other devices/interfaces.
+
+Connections table:
+| Device          | Interface   | Connected to       | Connected interface |
+|-----------------|-------------|--------------------|---------------------|
+| Switch-1        | port-1      | Console-1          | eth0                |
+| Console-1       | eth0        | Switch-1           | port-1              |
+| Switch-1        | port-2      | Console-2          | eth0                |
+| Console-2       | eth0        | Switch-1           | port-2              |
+| Switch-1        | port-3      | Console-3          | eth0                |
+| Console-3       | eth0        | Switch-1           | port-3              |
+| Switch-1        | port-12     | Switch-2           | port-1              |
+| Switch-2        | port-1      | Switch-1           | port-12             |
+| Switch-1        | port-13     | NAS                | eth0                |
+| NAS             | eth0        | Switch-1           | port-13             |
+| Switch-1        | port-24     | Server             | eth0                |
+| Server          | eth0        | Switch-1           | port-24             |
+| Switch-2        | port-2      | Workstation-1      | eth0                |
+| Workstation-1   | eth0        | Switch-2           | port-2              |
+| Switch-2        | port-3      | Workstation-1      | eth1                |
+| Workstation-1   | eth1        | Switch-2           | port-3              |
+| Switch-2        | port-4      | Workstation-2      | eth0                |
+| Workstation-2   | eth0        | Switch-2           | port-4              |
+| Switch-2        | port-5      | Workstation-2      | eth1                |
+| Workstation-2   | eth1        | Switch-2           | port-5              |
+| Switch-2        | port-6      | Workstation-3      | eth0                |
+| Workstation-3   | eth0        | Switch-2           | port-6              |
+| Switch-2        | port-7      | Workstation-3      | eth1                |
+| Workstation-3   | eth1        | Switch-2           | port-7              |
+| Switch-2        | port-12     | Switch-3           | port-12             |
+| Switch-3        | port-12     | Switch-2           | port-12             |
+| Switch-2        | port-24     | NAS                | eth1                |
+| NAS             | eth1        | Switch-2           | port-24             |
+| Switch-3        | port-3      | SBC-3              | eth0                |
+| SBC-3           | eth0        | Switch-3           | port-3              |
+| Switch-3        | port-6      | SBC-2              | eth0                |
+| SBC-2           | eth0        | Switch-3           | port-6              |
+| Switch-3        | port-9      | SBC-1              | eth0                |
+| SBC-1           | eth0        | Switch-3           | port-9              |
+
+Q&A examples (report questions and answer exactly with the Q&A format, without specifying other information):
+What is connected to Switch-2:port-5?
+The Workstation-2:eth1.
+
+What is connected to Console-3:eth0?
+The Switch-1:port-3.
+
+What is connected to NAS:eth1?
+The Switch-2:port-24.
+
+What is connected to Switch-3:port-6?
+The SBC-2:eth0.
+
+What is connected to Workstation-3:eth2?
+The eth2 network interface does not exist for Workstation-3.
+
+What is connected to SBC-2:eth1?
+There is nothing coonected to SBC-2:eth1.
+
+What is connected to Switch-2:port-12?
+The Switch-3:port-12.
+
+What is connected to Switch-1:port-14?
+There is nothing connected to Switch-1:port-14.
+
+<Any other sentence/phrase/question not related to this system>
+Sorry, I can support you only in tasks related to this system.

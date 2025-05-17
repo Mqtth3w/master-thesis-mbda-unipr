@@ -3,7 +3,7 @@
 @license GPL-3.0
 """
 
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from torch import float16
 from torch.cuda import empty_cache, ipc_collect
 import re
@@ -17,14 +17,17 @@ ipc_collect()
 # 'phir' microsoft/Phi-4-mini-reasoning (PARTIALLY TESTED) # looks 2x/3x slower than llama but it has better performances
 MODEL = "llama"
 
-# choose to use the small demo
-# 'True' use a really small demo system 
-# 'False' use the Fiorelli's sample system
-DEMO_SYSTEM = True
-
+# choose the system
+DEMO_SYSTEM = 0
 prompt_type = {
-    True: "./demo_prompt_txt_dash.txt",
-    False: "./prompt_txt_dash.txt"
+    -1: "./demo_prompt_txt_dash.txt",
+    0: "./smaller_prompt_txt_dash.txt",
+    1: "./prompt_txt_dash.txt",
+    2: "./prompt_txt_colon.txt",
+    3: "./prompt_json_dash.txt",
+    4: "./prompt_json_colon.txt",
+    5: "./prompt_tabular_dash.txt",
+    6: "./prompt_tabular_colon.txt",
 }
 
 model_conf_data = {

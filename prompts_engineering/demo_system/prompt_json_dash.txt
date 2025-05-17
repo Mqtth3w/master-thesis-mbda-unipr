@@ -1,0 +1,228 @@
+Your task:
+You will be given a network topology. Your job is to understand the structure and answer the questions that follow.
+Use the format shown in the examples to give your answers, do not add additional, inconsistent or unrelated information.
+
+Naming rules:
+Devices with numbers (e.g., Switch-1, Console-3, SBC-2) are different from each other.
+Interfaces are named like {device}-{interface} (e.g., Switch-1-port-14, Server-eth0).
+Connections are bidirectional. If one device says it's connected to another, the other must also list the same connection.
+
+Interface connection rules:
+If connected_to is null, the interface is not connected. 
+If connected_to has a value, it tells which device and interface it is connected to.
+To find what is connected to something like SBC-1-eth2, search all devices to check if any interface points to: "device": "SBC-1" and "interface": "eth2"
+
+Data format:
+The network is described in JSON. At the top level, there is a "devices" list.
+Each device has: a unique "name", a "type" (like Switch, Server, etc.) and  an "interfaces" list.
+Each interface has: a "name" (e.g., eth0, port-2) and a "connected_to" field, which can be null or an object with "device" and "interface".
+
+{
+  "devices": [
+    {
+      "name": "Switch-1",
+      "type": "Switch",
+      "interfaces": [
+        { "name": "port-1", "connected_to": { "device": "Console-1", "interface": "eth0" } },
+        { "name": "port-2", "connected_to": { "device": "Console-2", "interface": "eth0" } },
+        { "name": "port-3", "connected_to": { "device": "Console-3", "interface": "eth0" } },
+        { "name": "port-4", "connected_to": null },
+        { "name": "port-5", "connected_to": null },
+        { "name": "port-6", "connected_to": null },
+        { "name": "port-7", "connected_to": null },
+        { "name": "port-8", "connected_to": null },
+        { "name": "port-9", "connected_to": null },
+        { "name": "port-10", "connected_to": null },
+        { "name": "port-11", "connected_to": null },
+        { "name": "port-12", "connected_to": { "device": "Switch-2", "interface": "port-1" } },
+        { "name": "port-13", "connected_to": { "device": "NAS", "interface": "eth0" } },
+        { "name": "port-14", "connected_to": null },
+        { "name": "port-15", "connected_to": null },
+        { "name": "port-16", "connected_to": null },
+        { "name": "port-17", "connected_to": null },
+        { "name": "port-18", "connected_to": null },
+        { "name": "port-19", "connected_to": null },
+        { "name": "port-20", "connected_to": null },
+        { "name": "port-21", "connected_to": null },
+        { "name": "port-22", "connected_to": null },
+        { "name": "port-23", "connected_to": null },
+        { "name": "port-24", "connected_to": { "device": "Server", "interface": "eth0" } }
+      ]
+    },
+    {
+      "name": "Switch-2",
+      "type": "Switch",
+      "interfaces": [
+        { "name": "port-1", "connected_to": { "device": "Switch-1", "interface": "port-12" } },
+        { "name": "port-2", "connected_to": { "device": "Workstation-1", "interface": "eth0" } },
+        { "name": "port-3", "connected_to": { "device": "Workstation-1", "interface": "eth1" } },
+        { "name": "port-4", "connected_to": { "device": "Workstation-2", "interface": "eth0" } },
+        { "name": "port-5", "connected_to": { "device": "Workstation-2", "interface": "eth1" } },
+        { "name": "port-6", "connected_to": { "device": "Workstation-3", "interface": "eth0" } },
+        { "name": "port-7", "connected_to": { "device": "Workstation-3", "interface": "eth1" } },
+        { "name": "port-8", "connected_to": null },
+        { "name": "port-9", "connected_to": null },
+        { "name": "port-10", "connected_to": null },
+        { "name": "port-11", "connected_to": null },
+        { "name": "port-12", "connected_to": { "device": "Switch-3", "interface": "port-12" } },
+        { "name": "port-13", "connected_to": null },
+        { "name": "port-14", "connected_to": null },
+        { "name": "port-15", "connected_to": null },
+        { "name": "port-16", "connected_to": null },
+        { "name": "port-17", "connected_to": null },
+        { "name": "port-18", "connected_to": null },
+        { "name": "port-19", "connected_to": null },
+        { "name": "port-20", "connected_to": null },
+        { "name": "port-21", "connected_to": null },
+        { "name": "port-22", "connected_to": null },
+        { "name": "port-23", "connected_to": null },
+        { "name": "port-24", "connected_to": { "device": "NAS", "interface": "eth1" } }
+      ]
+    },
+    {
+      "name": "Switch-3",
+      "type": "Switch",
+      "interfaces": [
+      	{ "name": "port-1", "connected_to": null },
+      	{ "name": "port-2", "connected_to": null },
+        { "name": "port-3", "connected_to": { "device": "SBC-3", "interface": "eth0" } },
+        { "name": "port-4", "connected_to": null },
+        { "name": "port-5", "connected_to": null },
+        { "name": "port-6", "connected_to": { "device": "SBC-2", "interface": "eth0" } },
+        { "name": "port-7", "connected_to": null },
+        { "name": "port-8", "connected_to": null },
+        { "name": "port-9", "connected_to": { "device": "SBC-1", "interface": "eth0" } },
+        { "name": "port-10", "connected_to": null },
+        { "name": "port-11", "connected_to": null },
+        { "name": "port-12", "connected_to": { "device": "Switch-2", "interface": "port-12" } }
+        { "name": "port-13", "connected_to": null },
+        { "name": "port-14", "connected_to": null },
+        { "name": "port-15", "connected_to": null },
+        { "name": "port-16", "connected_to": null },
+        { "name": "port-17", "connected_to": null },
+        { "name": "port-18", "connected_to": null },
+        { "name": "port-19", "connected_to": null },
+        { "name": "port-20", "connected_to": null },
+        { "name": "port-21", "connected_to": null },
+        { "name": "port-22", "connected_to": null },
+        { "name": "port-23", "connected_to": null },
+        { "name": "port-24", "connected_to": null }
+      ]
+    },
+    {
+      "name": "Console-1",
+      "type": "Console",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-1", "interface": "port-1" } }
+      ]
+    },
+    {
+      "name": "Console-2",
+      "type": "Console",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-1", "interface": "port-2" } }
+      ]
+    },
+    {
+      "name": "Console-3",
+      "type": "Console",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-1", "interface": "port-3" } }
+      ]
+    },
+    {
+      "name": "Server",
+      "type": "Server",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-1", "interface": "port-24" } }
+      ]
+    },
+    {
+      "name": "NAS",
+      "type": "NAS",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-1", "interface": "port-13" } },
+        { "name": "eth1", "connected_to": { "device": "Switch-2", "interface": "port-24" } }
+      ]
+    },
+    {
+      "name": "Workstation-1",
+      "type": "Workstation",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-2", "interface": "port-2" } },
+        { "name": "eth1", "connected_to": { "device": "Switch-2", "interface": "port-3" } }
+      ]
+    },
+    {
+      "name": "Workstation-2",
+      "type": "Workstation",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-2", "interface": "port-4" } },
+        { "name": "eth1", "connected_to": { "device": "Switch-2", "interface": "port-5" } }
+      ]
+    },
+    {
+      "name": "Workstation-3",
+      "type": "Workstation",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-2", "interface": "port-6" } },
+        { "name": "eth1", "connected_to": { "device": "Switch-2", "interface": "port-7" } }
+      ]
+    },
+    {
+      "name": "SBC-1",
+      "type": "SBC",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-3", "interface": "port-9" } },
+        { "name": "eth1", "connected_to": null },
+        { "name": "eth2", "connected_to": null }
+      ]
+    },
+    {
+      "name": "SBC-2",
+      "type": "SBC",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-3", "interface": "port-6" } },
+        { "name": "eth1", "connected_to": null },
+        { "name": "eth2", "connected_to": null }
+      ]
+    },
+    {
+      "name": "SBC-3",
+      "type": "SBC",
+      "interfaces": [
+        { "name": "eth0", "connected_to": { "device": "Switch-3", "interface": "port-3" } },
+        { "name": "eth1", "connected_to": null },
+        { "name": "eth2", "connected_to": null }
+      ]
+    }
+  ]
+}
+
+Q&A examples (report questions and answer exactly with the Q&A format, without specifying other information):
+What is connected to Switch-2-port-5?
+The Workstation-2-eth1.
+
+What is connected to Console-3-eth0?
+The Switch-1-port-3.
+
+What is connected to NAS-eth1?
+The Switch-2-port-24.
+
+What is connected to Switch-3-port-6?
+The SBC-2-eth0.
+
+What is connected to Workstation-3-eth2?
+The eth2 network interface does not exist for Workstation-3.
+
+What is connected to SBC-2-eth1?
+There is nothing connected to SBC-2-eth1.
+
+What is connected to Switch-2-port-12?
+The Switch-3-port-12.
+
+What is connected to Switch-1-port-14?
+There is nothing connected to Switch-1-port-14.
+
+<Any other sentence/phrase/question not related to this system>
+Sorry, I can support you only in tasks related to this system.

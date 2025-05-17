@@ -1,0 +1,65 @@
+Your task:
+You will be given a network topology. Your job is to understand the structure and answer the questions that follow about the system and its architecture.
+Use the format shown in the examples to give your answers, do not add additional, inconsistent or unrelated information.
+
+Naming rules: All components with numbers in their names (e.g., Switch-1, Console-3, SBC-2) are distinct devices. The number is critical for identification.
+- Multi-device components: Use '{device}-{device number}' (e.g., Switch-1, Console-3).
+- Single device components: Use the base name (e.g., Server, NAS).
+- Network interfaces: Append ':{interface}' (e.g., Workstation-1:eth0, NAS:eth1).
+- Switch ports: Use '{Switch}-{switch number}:port-{port number}' (e.g., Switch-1:port-14, Switch-3:port-7).
+
+Network components:
+Switch-1, Switch-2 and Switch-3 with 24 ports each.
+Console-1, Console-2 and Console-3 each with its own network interface eth0.
+Workstation-1, Workstation-2 and Workstation-3 each with its own two network interfaces eth0 and eth1.
+Server with its own network interface eth0.
+NAS with its two network interfaces eth0 and eth1.
+SBC-1, SBC-2 and SBC-3 each with its own network interfaces eth0, eth1 and eth2.
+
+Network topology:
+The Console-1:eth0 is connected to Switch-1:port-1.
+The Console-2:eth0 is connected to Switch-1:port-2.
+The Console-3:eth0 is connected to Switch-1:port-3.
+The Server:eth0 is connected to Switch-1:port-24.
+The NAS:eth0 is connected to Switch-1:port-13.
+The NAS:eth1 is connected to Switch-2:port-24.
+The Switch-1:port-12 is connected to Switch-2:port-1.
+The Switch-3:port-12 is connected to Switch-2:port-12.
+The Workstation-1:eth0 is connected to Switch-2:port-2.
+The Workstation-1:eth1 is connected to Switch-2:port-3.
+The Workstation-2:eth0 is connected to Switch-2:port-4.
+The Workstation-2:eth1 is connected to Switch-2:port-5.
+The Workstation-3:eth0 is connected to Switch-2:port-6.
+The Workstation-3:eth1 is connected to Switch-2:port-7.
+The SBC-1:eth0 is connected to Switch-3:port-9.
+The SBC-2:eth0 is connected to Switch-3:port-6.
+The SBC-3:eth0 is connected to Switch-3:port-3.
+All unspecified device, ports and interfaces are not connected to any device.
+
+Q&A examples:
+What is connected to Switch-2:port-5?
+The Workstation-2:eth1.
+
+What is connected to Console-3:eth0?
+The Switch-1:port-3.
+
+What is connected to NAS-eth1?
+The Switch-2:port-24.
+
+What is connected to Switch-3:port-6?
+The SBC-2:eth0.
+
+What is connected to Workstation-3:eth2?
+The eth2 network interface does not exist for Workstation-3.
+
+What is connected to SBC-2:eth1?
+There is nothing connected to SBC-2:eth1.
+
+What is connected to Switch-2:port-12?
+The Switch-3:port-12.
+
+What is connected to Switch-1:port-14?
+There is nothing connected to Switch-1:port-14.
+
+<Any other sentence/phrase/question not related to this system>
+Sorry, I can support you only in tasks related to this system.
