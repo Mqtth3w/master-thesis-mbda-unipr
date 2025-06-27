@@ -1,0 +1,2155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- ################################################## -->
+<!-- #						                          #	--> 
+<!-- #	System Definition 			                  #	--> 
+<!-- #						                          #	-->
+<!-- #	CSCI: 	SAMPT NG UMOD SHELTERED	(IT)	      #	-->
+<!-- #						                          #	-->
+<!-- ################################################## -->
+<Diagnostic>
+	<Categories>
+		<!-- Test categories -->
+		<TestCategories>
+			<Category id="ALL" label="ALL" />
+			<Category id="PBIT" label="Built in tests" />
+			<Category id="NETWORKING" label="Networking" />
+			<Category id="STORAGE" label="Storage" />
+			<Category id="USB" label="USB ports" />
+			<Category id="SERIAL" label="Serial" />
+			<!--<Category id="GPIO" label="GPIO" />-->
+			<Category id="TEMPERATURE" label = "Temperature" />
+			<Category id="VOLTAGE" label = "Voltage" />
+			<Category id="DISPLAY" label="Display" />
+			<Category id="INTERACTIVE" label="Interactive" />
+			<Category id="AUTO" label="Automatic tests" />
+		</TestCategories>
+		
+		<MonitorCategories>
+			<Category id="NET_ERRORS" label="Network Errors" />
+			<Category id="PROCESSING" label="Processing" />
+			<Category id="NETWORKING" label="Networking" />			
+ 		</MonitorCategories>
+
+		<StressCategories>
+			<Category id="PROCESSING" label="Processing" />
+			<Category id="NETWORKING" label="Networking" />
+		</StressCategories>
+	</Categories>
+	
+	<!-- Definition of the systems being tested -->	
+	<System name="Sample System">
+		<Subsystem id="GWS1" label="GWS1">
+		</Subsystem>
+		<Subsystem id="GWS2" label="GWS2">
+		</Subsystem>
+		<Subsystem id="GWS3" label="GWS3">
+		</Subsystem>
+		<Subsystem id="NAS" label="NAS" />
+		<Subsystem id="SWITCH1" label="Switch 1"/>
+		<Subsystem id="SWITCH2" label="Switch 2"/>
+		<Subsystem id="SWITCH3" label="Switch 3"/>
+		<Subsystem id="SBC1" label="SBC1" />
+		<Subsystem id="SBC2" label="SBC2" />
+		<Subsystem id="SBC3" label="SBC3" />
+		<Subsystem id="WS1" label="Workstation1" />
+		<Subsystem id="WS2" label="Workstation2" />
+		<Subsystem id="WS3" label="Workstation3" />
+		<Subsystem id="SERVER" label="Server" />
+	
+ 	</System>
+	<!-- Definition of the agents performing the tests -->
+	<Agents>
+		<!-- An agent definition -->
+		<Agent name="LOCAL" remoteIp="127.0.0.1" remotePort="30000"/>
+		<Agent name="GWS1" remoteIp="127.0.0.1" remotePort="30010"/>
+		<Agent name="GWS2" remoteIp="127.0.0.1" remotePort="30020"/>
+		<Agent name="GWS3" remoteIp="127.0.0.1" remotePort="30030"/>
+		<Agent name="NAS" remoteIp="127.0.0.1" remotePort="30040" />
+		<Agent name="SBC1" remoteIp="127.0.0.1" remotePort="30050"/>
+		<Agent name="SBC2" remoteIp="127.0.0.1" remotePort="30060"/>
+		<Agent name="SBC3" remoteIp="127.0.0.1" remotePort="30070"/>
+		<Agent name="SERVER" remoteIp="127.0.0.1" remotePort="30080"/>
+		<Agent name="WS1" remoteIp="127.0.0.1" remotePort="30090"/>
+		<Agent name="WS2" remoteIp="127.0.0.1" remotePort="30100"/>
+		<Agent name="WS3" remoteIp="127.0.0.1" remotePort="30110"/>
+	</Agents>	
+
+
+	<TestList>
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		        GWS1 [START]  	                  # -->
+	<!-- #				                     		      # -->
+	<!-- ################################################## -->
+		
+
+	<!-- #### GWS1 PBIT [START] #### -->
+
+		<Test id="GWS1_PBIT_ProcUnit" label="GWS1 - Computer Unit PBIT" subsystemId="GWS1" agentName="GWS1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>ProcessingUnitPbit</Class>
+				<Params>
+				    <Param name='showBiosInfo' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+
+		
+		<Test id="GWS1_RAM_INFO" label="GWS1 - Ram PBIT" subsystemId="GWS1" agentName="GWS1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>RamInfo</Class>
+				<Params>
+				    <Param name='memorySizeMb' value='range: min=16 max=*' />
+				    <Param name='viewBankDetails' value='yes' />
+				</Params>
+			</TestData>
+		</Test>
+
+
+		<Test id="GWS1_PBIT_FM" label="GWS1 - SATA Flash Module PBIT" subsystemId="GWS1" agentName="GWS1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>SmartHddOverallHealth</Class>
+				<Params>
+				    <Param name='device' value='/dev/sda' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<Test id="T_LSPCI_GWS1" label="GWS1 - HW Configuration" subsystemId="GWS1" agentName="GWS1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>lspci</Class>
+   				<Params>
+					<Param name="vendorID" value="8086"/>
+					<Param name="deviceID" value="a0ef"/>
+					<Param name="class" value="0500"/>
+					<Param name="showConstraints" value="yes"/>
+					<Param name="showRawdata" value="yes"/>
+				</Params>
+			</TestData>
+		</Test>
+
+	<!-- #### GWS1 PBIT [END] #### -->
+
+	<!-- #### GWS1 DIAGNOSTIC [START] #### -->
+
+		<Test id="GWS1_FM" label="GWS1 - SATA Flash Module Info" subsystemId="GWS1" agentName="GWS1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,STORAGE">
+			<TestData>
+				<Class>SmartHddInfo</Class>
+				<Params>
+				    <Param name='device' value='/dev/sda' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<Test id="GWS1_ETH0_LNK" label="GWS1 - ETH0 Link Status" subsystemId="GWS1" agentName="GWS1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+			<TestData>
+				<Class>Ethernet</Class>
+				<Params>
+				    <Param name='device' value='eth0' />
+				    <Param name='linkStatus' value='UP' />
+					<Param name='linkSpeed' value='1000' />
+					<Param name='linkMode' value='FULL' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<!-- SENSORS Test-->
+		<Test id="GWS1_Sensors" label="GWS1 - Temperatures" subsystemId="GWS1" agentName="GWS1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+			<TestData>
+				<Class>Sensors</Class>
+				<Params>
+					<Param name='acpitz|temp1|input|LABEL:Chassis|UNIT:C' value='range: min= * max=110' />
+				    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=100' />
+					<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=100' />
+					<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=100' />
+					<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=100' />
+				    <Param name='showLabel' value='TRUE' />
+					<Param name='showUnit' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<!-- NVIDIA GPU test-->
+		<Test id="GWS1_NvidiaGpu" label="GWS1 - Nvidia GPU Status" subsystemId="GWS1" agentName="GWS1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,DISPLAY">
+			<TestData>
+				<Class>NvidiaGpuStatus</Class>
+				<Params>
+					<Param name='deviceId' value='0' />
+				    <Param name='productName' value='*' />
+					<Param name='displayMode' value='oneof: YES|NO' />
+					<Param name='displayActive' value='oneof: YES|NO' />
+					<Param name='gpuUuid' value='*' />
+					<Param name='driverVersion' value='*' />
+					<Param name='vBiosVersion' value='*' />
+					<Param name='infoRomImgVersion' value='*' />
+					<Param name='infoRomOemVersion' value='*' />
+					<Param name='performanceState' value='*' />
+					<Param name='memSize' value='*' />
+					<Param name='graphicsClock' value='*' />
+					<Param name='smClock' value='*' />
+					<Param name='memoryClock' value='*' />
+					<Param name='gpuLoad' value='*' />
+					<Param name='memLoad' value='*' />
+					<Param name='currentTemp' value='*' />
+				    <Param name='showLabel' value='TRUE' />
+					<Param name='showUnit' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+		
+	<!-- #### GWS1 DIAGNOSTIC [END] #### -->
+
+	<!-- ################################################## -->
+	<!-- #					                              # -->
+	<!-- #		   GWS1 [END]		                  	  # -->
+	<!-- #						                          # -->
+	<!-- ################################################## -->
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		        GWS2 [START]  	                 # -->
+	<!-- #				                     		      # -->
+	<!-- ################################################## -->
+		
+
+	<!-- #### GWS2 PBIT [START] #### -->
+
+		<Test id="GWS2_PBIT_ProcUnit" label="GWS2 - Computer Unit PBIT" subsystemId="GWS2" agentName="GWS2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>ProcessingUnitPbit</Class>
+				<Params>
+				    <Param name='showBiosInfo' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+
+		
+		<Test id="GWS2_RAM_INFO" label="GWS2 - Ram PBIT" subsystemId="GWS2" agentName="GWS2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>RamInfo</Class>
+				<Params>
+				    <Param name='memorySizeMb' value='range: min=16 max=*' />
+				    <Param name='viewBankDetails' value='yes' />
+				</Params>
+			</TestData>
+		</Test>
+
+
+		<Test id="GWS2_PBIT_FM" label="GWS2 - SATA Flash Module PBIT" subsystemId="GWS2" agentName="GWS2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>SmartHddOverallHealth</Class>
+				<Params>
+				    <Param name='device' value='/dev/sda' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<Test id="T_LSPCI_GWS2" label="GWS2 - HW Configuration" subsystemId="GWS2" agentName="GWS2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>lspci</Class>
+   				<Params>
+					<Param name="vendorID" value="8086"/>
+					<Param name="deviceID" value="a0ef"/>
+					<Param name="class" value="0500"/>
+					<Param name="showConstraints" value="yes"/>
+					<Param name="showRawdata" value="yes"/>
+				</Params>
+			</TestData>
+		</Test>
+
+	<!-- #### GWS2 PBIT [END] #### -->
+
+	<!-- #### GWS2 DIAGNOSTIC [START] #### -->
+
+		<Test id="GWS2_FM" label="GWS2 - SATA Flash Module Info" subsystemId="GWS2" agentName="GWS2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,STORAGE">
+			<TestData>
+				<Class>SmartHddInfo</Class>
+				<Params>
+				    <Param name='device' value='/dev/sda' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<Test id="GWS2_ETH0_LNK" label="GWS2 - ETH0 Link Status" subsystemId="GWS2" agentName="GWS2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+			<TestData>
+				<Class>Ethernet</Class>
+				<Params>
+				    <Param name='device' value='eth0' />
+				    <Param name='linkStatus' value='UP' />
+					<Param name='linkSpeed' value='1000' />
+					<Param name='linkMode' value='FULL' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<!-- SENSORS Test-->
+		<Test id="GWS2_Sensors" label="GWS2 - Temperatures" subsystemId="GWS2" agentName="GWS2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+			<TestData>
+				<Class>Sensors</Class>
+				<Params>
+					<Param name='acpitz|temp1|input|LABEL:Chassis|UNIT:C' value='range: min= * max=110' />
+				    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=100' />
+					<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=100' />
+					<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=100' />
+					<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=100' />
+				    <Param name='showLabel' value='TRUE' />
+					<Param name='showUnit' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<!-- NVIDIA GPU test-->
+		<Test id="GWS2_NvidiaGpu" label="GWS2 - Nvidia GPU Status" subsystemId="GWS2" agentName="GWS2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,DISPLAY">
+			<TestData>
+				<Class>NvidiaGpuStatus</Class>
+				<Params>
+					<Param name='deviceId' value='0' />
+				    <Param name='productName' value='*' />
+					<Param name='displayMode' value='oneof: YES|NO' />
+					<Param name='displayActive' value='oneof: YES|NO' />
+					<Param name='gpuUuid' value='*' />
+					<Param name='driverVersion' value='*' />
+					<Param name='vBiosVersion' value='*' />
+					<Param name='infoRomImgVersion' value='*' />
+					<Param name='infoRomOemVersion' value='*' />
+					<Param name='performanceState' value='*' />
+					<Param name='memSize' value='*' />
+					<Param name='graphicsClock' value='*' />
+					<Param name='smClock' value='*' />
+					<Param name='memoryClock' value='*' />
+					<Param name='gpuLoad' value='*' />
+					<Param name='memLoad' value='*' />
+					<Param name='currentTemp' value='*' />
+				    <Param name='showLabel' value='TRUE' />
+					<Param name='showUnit' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+	<!-- #### GWS1 DIAGNOSTIC [END] #### -->
+
+	<!-- ################################################## -->
+	<!-- #					                              # -->
+	<!-- #		   		GWS2 [END]		                  # -->
+	<!-- #						                          # -->
+	<!-- ################################################## -->
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		        GWS3 [START]  	                  # -->
+	<!-- #				                     		      # -->
+	<!-- ################################################## -->
+		
+
+	<!-- #### GWS3 PBIT [START] #### -->
+
+		<Test id="GWS3_PBIT_ProcUnit" label="GWS3 - Computer Unit PBIT" subsystemId="GWS3" agentName="GWS3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>ProcessingUnitPbit</Class>
+				<Params>
+				    <Param name='showBiosInfo' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+
+		
+		<Test id="GWS3_RAM_INFO" label="GWS3 - Ram PBIT" subsystemId="GWS3" agentName="GWS3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>RamInfo</Class>
+				<Params>
+				    <Param name='memorySizeMb' value='range: min=16 max=*' />
+				    <Param name='viewBankDetails' value='yes' />
+				</Params>
+			</TestData>
+		</Test>
+
+
+		<Test id="GWS3_PBIT_FM" label="GWS3 - SATA Flash Module PBIT" subsystemId="GWS3" agentName="GWS3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>SmartHddOverallHealth</Class>
+				<Params>
+				    <Param name='device' value='/dev/sda' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<Test id="T_LSPCI_GWS3" label="GWS3 - HW Configuration" subsystemId="GWS3" agentName="GWS3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>lspci</Class>
+   				<Params>
+					<Param name="vendorID" value="8086"/>
+					<Param name="deviceID" value="a0ef"/>
+					<Param name="class" value="0500"/>
+					<Param name="showConstraints" value="yes"/>
+					<Param name="showRawdata" value="yes"/>
+				</Params>
+			</TestData>
+		</Test>
+
+	<!-- #### GWS3 PBIT [END] #### -->
+
+	<!-- #### GWS3 DIAGNOSTIC [START] #### -->
+
+		<Test id="GWS3_FM" label="GWS3 - SATA Flash Module Info" subsystemId="GWS3" agentName="GWS3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,STORAGE">
+			<TestData>
+				<Class>SmartHddInfo</Class>
+				<Params>
+				    <Param name='device' value='/dev/sda' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<Test id="GWS3_ETH0_LNK" label="GWS3 - ETH0 Link Status" subsystemId="GWS3" agentName="GWS3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+			<TestData>
+				<Class>Ethernet</Class>
+				<Params>
+				    <Param name='device' value='eth0' />
+				    <Param name='linkStatus' value='UP' />
+					<Param name='linkSpeed' value='1000' />
+					<Param name='linkMode' value='FULL' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<!-- SENSORS Test-->
+		<Test id="GWS3_Sensors" label="GWS3 - Temperatures" subsystemId="GWS3" agentName="GWS3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+			<TestData>
+				<Class>Sensors</Class>
+				<Params>
+					<Param name='acpitz|temp1|input|LABEL:Chassis|UNIT:C' value='range: min= * max=110' />
+				    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=100' />
+					<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=100' />
+					<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=100' />
+					<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=100' />
+				    <Param name='showLabel' value='TRUE' />
+					<Param name='showUnit' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<!-- NVIDIA GPU test-->
+		<Test id="GWS3_NvidiaGpu" label="GWS3 - Nvidia GPU Status" subsystemId="GWS3" agentName="GWS3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,DISPLAY">
+			<TestData>
+				<Class>NvidiaGpuStatus</Class>
+				<Params>
+					<Param name='deviceId' value='0' />
+				    <Param name='productName' value='*' />
+					<Param name='displayMode' value='oneof: YES|NO' />
+					<Param name='displayActive' value='oneof: YES|NO' />
+					<Param name='gpuUuid' value='*' />
+					<Param name='driverVersion' value='*' />
+					<Param name='vBiosVersion' value='*' />
+					<Param name='infoRomImgVersion' value='*' />
+					<Param name='infoRomOemVersion' value='*' />
+					<Param name='performanceState' value='*' />
+					<Param name='memSize' value='*' />
+					<Param name='graphicsClock' value='*' />
+					<Param name='smClock' value='*' />
+					<Param name='memoryClock' value='*' />
+					<Param name='gpuLoad' value='*' />
+					<Param name='memLoad' value='*' />
+					<Param name='currentTemp' value='*' />
+				    <Param name='showLabel' value='TRUE' />
+					<Param name='showUnit' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+	<!-- #### GWS3 DIAGNOSTIC [END] #### -->
+
+	<!-- ################################################## -->
+	<!-- #					                              # -->
+	<!-- #		  		 GWS3 [END]		                  # -->
+	<!-- #						                          # -->
+	<!-- ################################################## -->
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		        NAS [START]                       # -->
+	<!-- #				                     		      # -->
+	<!-- ################################################## -->
+		
+
+	<!-- #### NAS PBIT [START] #### -->
+
+		<Test id="NAS_PBIT_ProcUnit" label="NAS - Computer Unit PBIT" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>ProcessingUnitPbit</Class>
+				<Params>
+				    <Param name='showBiosInfo' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+
+
+		<Test id="NAS_RAM_TEST" label="NAS - Ram Test" subsystemId="NAS" type="AUTO" agentName="NAS" categoriesId="ALL,PBIT">
+		   <TestData>
+				<Class>RamTest</Class>
+				<Params>
+				  <Param name="testList" value="StuckAddress;WalkingOnes;WalkingZeroes;8-bitWrites;16-bitWrites"/>
+				  <Param name="memoryQuantity" value="100"/>
+				  <Param name="memoryMeasureUnit" value="kb"/>
+				  <Param name="iterations" value="1"/>
+				</Params>
+	      </TestData>
+	   </Test>
+    		
+		<Test id="NAS_RAM_INFO" label="NAS - Ram PBIT" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>RamInfo</Class>
+				<Params>
+				    <Param name='memorySizeMb' value='range: min=16 max=*' />
+				    <Param name='viewBankDetails' value='yes' />
+				</Params>
+			</TestData>
+		</Test>
+
+
+		<Test id="NAS_PBIT_FM1" label="NAS - SATA Flash Module PBIT (Disk 1)" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>SmartHddOverallHealth</Class>
+				<Params>
+				    <Param name='device' value='/dev/sda' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<Test id="NAS_PBIT_FM2" label="NAS - SATA Flash Module PBIT (Disk 2)" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,PBIT">
+			<TestData>
+				<Class>SmartHddOverallHealth</Class>
+				<Params>
+				    <Param name='device' value='/dev/sdb' />
+				</Params>
+			</TestData>
+		</Test>
+
+	<!-- #### NAS PBIT [END] #### -->
+
+
+	<!-- #### NAS DIAGNOSTIC [START] #### -->
+
+		<Test id="NAS_FM1" label="NAS - SATA Flash Module Info (Disk 1)" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,STORAGE">
+			<TestData>
+				<Class>SmartHddInfo</Class>
+				<Params>
+				    <Param name='device' value='/dev/sda' />
+				</Params>
+			</TestData>
+		</Test>
+
+
+		<Test id="NAS_FM2" label="NAS - SATA Flash Module Info (Disk 2)" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,STORAGE">
+			<TestData>
+				<Class>SmartHddInfo</Class>
+				<Params>
+				    <Param name='device' value='/dev/sdb' />
+				</Params>
+			</TestData>
+		</Test>
+
+
+		<Test id="NAS_ETH0_LNK" label="NAS - ETH0 Link Status" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+			<TestData>
+				<Class>Ethernet</Class>
+				<Params>
+				    <Param name='device' value='eth0' />
+				    <Param name='linkStatus' value='UP' />
+					<Param name='linkSpeed' value='1000' />
+					<Param name='linkMode' value='FULL' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<Test id="NAS_ETH1_LNK" label="NAS - ETH1 Link Status" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+			<TestData>
+				<Class>Ethernet</Class>
+				<Params>
+				    <Param name='device' value='eth1' />
+				    <Param name='linkStatus' value='UP' />
+					<Param name='linkSpeed' value='1000' />
+					<Param name='linkMode' value='FULL' />
+				</Params>
+			</TestData>
+		</Test>
+		
+		
+		<Test id="NAS_Sensors" label="NAS - Sensors Temperatures" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+			<TestData>
+				<Class>Sensors</Class>
+				<Params>
+				    <Param name='coretemp|Package id 1|input|LABEL:Package id 1 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 0|input|LABEL:CPU1 Core 0 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 1|input|LABEL:CPU1 Core 1 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 2|input|LABEL:CPU1 Core 2 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 3|input|LABEL:CPU1 Core 3 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 4|input|LABEL:CPU1 Core 4 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 8|input|LABEL:CPU1 Core 8 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 9|input|LABEL:CPU1 Core 9 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 10|input|LABEL:CPU1 Core 10 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 11|input|LABEL:CPU1 Core 11 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0001|Core 12|input|LABEL:CPU1 Core 12 Temperature|UNIT:C' value='range: min= * max=102' />
+
+					<Param name='i350bb|loc1|input|LABEL:loc1 Temperature|UNIT:C' value='range: min= * max=120' />
+
+					<Param name='power_meter|power1|average|LABEL:Power 1 in W|UNIT:W' value='*' />
+
+					<Param name='coretemp@0000|Package id 0|input|LABEL:Package id 2 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 0|input|LABEL:CPU2 Core 0 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 1|input|LABEL:CPU2 Core 1 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 2|input|LABEL:CPU2 Core 2 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 3|input|LABEL:CPU2 Core 3 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 4|input|LABEL:CPU2 Core 4 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 8|input|LABEL:CPU2 Core 8 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 9|input|LABEL:CPU2 Core 9 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 10|input|LABEL:CPU2 Core 10 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 11|input|LABEL:CPU2 Core 11 Temperature|UNIT:C' value='range: min= * max=102' />
+					<Param name='coretemp@0000|Core 12|input|LABEL:CPU2 Core 12 Temperature|UNIT:C' value='range: min= * max=102' /><!---->
+				    <Param name='showLabel' value='TRUE' />
+					<Param name='showUnit' value='TRUE' />
+				</Params>
+			</TestData>
+		</Test>
+
+		<Test id="NAS_IPMI_TEMP_TEST" label="NAS - Temperatures Status [C]" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="5000" categoriesId="ALL">
+			<!--da modificare id e label-->
+			<TestData>
+				<Class>Ipmi</Class>
+				<Params>
+  					<Param name="commandType" value="Sensor"/>
+  					<!--<Param name="username" value="ADMIN"/>
+  					<Param name="password" value="ADMIN"/>
+  					<Param name="password" value="Westek2020!"/>
+  					<Param name="hostname" value="192.168.0.25"/>-->
+  					<Param name="showUnit" value="FALSE"/>
+  					<Param name="showLabel" value="TRUE"/>
+  					<Param name="SENSOR|CPU1 Temp" value="range: min=0.0 max=100.0"/>
+  					<Param name="SENSOR|CPU2 Temp" value="range: min=0.0 max=100.0"/>
+  					<Param name="SENSOR|PCH Temp" value="range: min=-11.0 max=100.0"/>
+  					<Param name="SENSOR|System Temp" value="range: min=-9.0 max=90.0"/>
+  					<Param name="SENSOR|Peripheral Temp" value="range: min=-9.0 max=90.0"/>
+  
+  					<Param name="SENSOR|VRMP1AB Temp" value="range: min=-9.0 max=105.0"/>
+  					<Param name="SENSOR|VRMP1DE Temp" value="range: min=-9.0 max=105.0"/>
+  					<Param name="SENSOR|VRMP2AB Temp" value="range: min=-9.0 max=105.0"/>
+  					<Param name="SENSOR|VRMP2DE Temp" value="range: min=-9.0 max=105.0"/> 
+  
+ 					<Param name="SENSOR|VRMCpu1IN Temp" value="range: min=-9.0 max=105.0"/>
+  					<Param name="SENSOR|VRMCpu1IO Temp" value="range: min=-9.0 max=105.0"/>
+  					<Param name="SENSOR|VRMCpu2IN Temp" value="range: min=-9.0 max=105.0"/>
+  					<Param name="SENSOR|VRMCpu2IO Temp" value="range: min=-9.0 max=105.0"/>
+  
+  					<Param name="SENSOR|P1-DIMMA1 Temp" value="range: min=1 max=90"/>
+  					<!--<Param name="SENSOR|P1-DIMMB1 Temp" value="range: min=1 max=90"/>-->
+  					<!--<Param name="SENSOR|P1-DIMMD1 Temp" value="range: min=1 max=90"/>
+  					<Param name="SENSOR|P1-DIMME1 Temp" value="range: min=1 max=90"/>-->
+  
+  					<Param name="SENSOR|P2-DIMMA1 Temp" value="range: min=1 max=90"/>
+  					<!--<Param name="SENSOR|P2-DIMMB1 Temp" value="range: min=1 max=90"/>-->
+  					<!--<Param name="SENSOR|P2-DIMMD1 Temp" value="range: min=1 max=90"/>
+  					<Param name="SENSOR|P2-DIMME1 Temp" value="range: min=1 max=90"/>-->
+				</Params>
+			</TestData>
+		</Test>
+
+    	<Test id="NAS_IPMI_FAN_TEST" label="NAS - Fans Status [rpm]" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="5000" categoriesId="ALL">
+      		<TestData>
+        		<Class>Ipmi</Class>
+        		<Params>
+				  <Param name="commandType" value="Sensor"/>
+				  <!--<Param name="username" value="ADMIN"/>
+				  <Param name="password" value="Westek2020!"/>
+				  <Param name="hostname" value="192.168.4.200"/>-->
+				  <Param name="showUnit" value="FALSE"/>
+				  <Param name="showLabel" value="TRUE"/>
+				  <Param name="SENSOR|FAN1" value="range: min=300.000 max=25500.000"/>
+				  <Param name="SENSOR|FAN2" value="range: min=300.000 max=25500.000"/>
+				  <Param name="SENSOR|FAN3" value="range: min=300.000 max=25500.000"/>
+				  <Param name="SENSOR|FAN4" value="range: min=300.000 max=25500.000"/>
+				  <Param name="SENSOR|FAN5" value="range: min=300.000 max=25500.000"/>
+				  <Param name="SENSOR|FAN6" value="range: min=300.000 max=25500.000"/>
+				  <Param name="SENSOR|FANA" value="range: min=300.000 max=25500.000"/>
+				  <Param name="SENSOR|FANB" value="range: min=300.000 max=25500.000"/>
+		    	</Params>
+      		</TestData>
+    	</Test>
+
+
+		<Test id="NAS_IPMI_VOLT_TEST" label="NAS - Voltages Status [V]" subsystemId="NAS" agentName="NAS" type="AUTO" iterationDelayMsec="5000" categoriesId="ALL">
+  			<TestData>
+    			<Class>Ipmi</Class>
+   				<Params>
+				  <Param name="commandType" value="Sensor"/>
+				  <!--<Param name="username" value="ADMIN"/>
+				  <Param name="password" value="Westek2020!"/>
+				  <Param name="hostname" value="192.168.4.200"/>-->
+				  <Param name="showUnit" value="FALSE"/>
+				  <Param name="showLabel" value="TRUE"/>
+				  <Param name="SENSOR|12V" value="range: min=10.116 max=13.356"/>
+				  <Param name="SENSOR|5VCC" value="range: min=4.224 max=5.587"/>
+				  <Param name="SENSOR|3.3VCC" value="range: min=2.789 max=3.690"/>
+				  <Param name="SENSOR|Vcpu1" value="range: min=1.240 max=2.104"/>
+				  <Param name="SENSOR|Vcpu2" value="range: min=1.240 max=2.104"/>
+				  <Param name="SENSOR|VDimmP1AB" value="range: min=1.027 max=2.104"/>
+				  <Param name="SENSOR|VDimmP1DE" value="range: min=1.027 max=2.104"/>
+				  <Param name="SENSOR|VDimmP2AB" value="range: min=1.027 max=2.104"/>
+				  <Param name="SENSOR|VDimmP2DE" value="range: min=1.027 max=2.104"/>
+				  <Param name="SENSOR|5VSB" value="range: min=4.240 max=5.590"/>
+				  <Param name="SENSOR|3.3VSB" value="range: min=2.789 max=3.690"/>
+				  <Param name="SENSOR|1.8V PCH" value="range: min=1.581 max=2.031"/>
+				  <Param name="SENSOR|PVNN PCH" value="range: min=0.754 max=1.126"/>
+				  <Param name="SENSOR|1.05V PCH" value="range: min=0.866 max=1.377"/>
+   			 	</Params>
+  			</TestData>
+		</Test>
+		
+		<!-- #### NAS DIAGNOSTIC [END] #### -->
+
+	<!-- ################################################## -->
+	<!-- #					                              # -->
+	<!-- #		   NAS [END]     		                  # -->
+	<!-- #						                          # -->
+	<!-- ################################################## -->
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		SWITCH 1 [START]						  # -->
+	<!-- #						      					  # -->
+	<!-- ################################################## -->
+
+
+
+	<Test id="SWITCH1_BIT" label="SWITCH 1 - BIT Status" subsystemId="SWITCH1" agentName="LOCAL" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+		<TestData>
+			<Class>SnmpMultiGet</Class>
+			<Params>
+			    <Param name='snmpVersion' value='2c' />    
+				<Param name='snmpCommunity' value='public' />
+				<Param name='snmpAgentIpAddr' value='192.168.0.57' />
+			    <Param name='oidTranslation' value='true' />
+			    <Param name='showLabels' value='true' />
+			    <Param name='showConstraints' value='true' />
+
+				<!--  Product Name as requested  -->
+				<Param name='1.3.6.1.2.1.1.1.0|Product ID' value='*' />
+
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.6.1005|Sensor #1 Temperature State|normal(1),warning(2),critical(3),shutdown(4),notPresent(5),notFunctioning(6)' value='1' />
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.6.1103|Sensor Power Supply 1A Temperature State|normal(1),warning(2),critical(3),shutdown(4),notPresent(5),notFunctioning(6)' value='1' />
+
+				<!--ciscoEnvMonTemperatureStatusValueRev1 OBJECT-TYPE
+						 SYNTAX     Integer32
+						 UNITS      "degrees Celsius"
+						 MAX-ACCESS read-only
+						 STATUS     current
+						 DESCRIPTION
+								 "The current measurement of the testpoint being instrumented.It also 
+								 accomodates negative temperature values."
+						 ::= { ciscoEnvMonTemperatureStatusEntry 7 }-->
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.7.1005|Sensor #1 Temperature Value' value='*' />
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.7.1103|Sensor Power Supply 1A Temperature Value' value='*' />
+
+				<!--ciscoEnvMonSupplyState OBJECT-TYPE
+						SYNTAX     CiscoEnvMonState
+						MAX-ACCESS read-only
+						STATUS     current
+						DESCRIPTION
+								"The current state of the power supply being instrumented."
+						::= { ciscoEnvMonSupplyStatusEntry 3 }
+
+				CiscoEnvMonState ::= TEXTUAL-CONVENTION
+						STATUS  current
+						DESCRIPTION
+								"Represents the state of a device being monitored.
+								 Valid values are:
+
+								 normal(1):         the environment is good, such as low
+								                    temperature.
+
+								 warning(2):        the environment is bad, such as temperature
+								                    above normal operation range but not too
+								                    high.
+
+								 critical(3):       the environment is very bad, such as
+								                    temperature much higher than normal
+								                    operation limit.
+
+								 shutdown(4):       the environment is the worst, the system
+								                    should be shutdown immediately.
+
+								 notPresent(5):     the environmental monitor is not present,
+								                    such as temperature sensors do not exist.
+
+								 notFunctioning(6): the environmental monitor does not 
+								                    function properly, such as a temperature
+								                    sensor generates a abnormal data like
+								                    1000 C.
+								"
+						SYNTAX  INTEGER {
+								        normal(1),
+								        warning(2),
+								        critical(3),
+								        shutdown(4),
+								        notPresent(5),
+								        notFunctioning(6)
+								}-->
+
+				<Param name='1.3.6.1.4.1.9.9.13.1.5.1.3.1054|PSU1 Supply State|normal(1),warning(2),critical(3),shutdown(4),notPresent(5),notFunctioning(6)' value='1' /> 
+
+				<!--ciscoEnvMonSupplySource OBJECT-TYPE
+						SYNTAX INTEGER {
+								        unknown(1),
+								        ac(2),
+								        dc(3),
+								        externalPowerSupply(4),
+								        internalRedundant(5)
+								}
+						MAX-ACCESS read-only
+						STATUS     current
+						DESCRIPTION
+								"The power supply source.
+								 unknown - Power supply source unknown
+								 ac      - AC power supply
+								 dc      - DC power supply
+								 externalPowerSupply - External power supply
+								 internalRedundant - Internal redundant power supply 
+								"
+						::= { ciscoEnvMonSupplyStatusEntry 4 }
+				-->
+
+				<Param name='1.3.6.1.4.1.9.9.13.1.5.1.4.1054|PSU1 Supply Source|unknown(1),ac(2),dc(3),externalPowerSupply(4),internalRedundant(5)' value='2' /> 
+			</Params>
+		</TestData>
+	 </Test>
+
+
+
+
+	<Test id="SWITCH1_PORT_STATUS" label="SWITCH 1 - Ports Status" subsystemId="SWITCH1" agentName="LOCAL" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+		<TestData>
+			<Class>SnmpMultiGet</Class>
+			<Params>
+			    <Param name='snmpVersion' value='2c' />    
+				<Param name='snmpCommunity' value='public' />
+				<Param name='snmpAgentIpAddr' value='192.168.0.57' />
+			    <Param name='oidTranslation' value='true' />
+			    <Param name='showLabels' value='true' />
+			    <Param name='showConstraints' value='true' />
+
+				<!--Ports Operative Status-->
+				<Param name='1.3.6.1.2.1.2.2.1.8.10277|P1 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10278|P2 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10279|P3 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10280|P4 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' /><!--THE PORT # the value was * why?-->
+				<Param name='1.3.6.1.2.1.2.2.1.8.10281|P5 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10282|P6 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10283|P7 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10284|P8 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10285|P9 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10286|P10 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10287|P11 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10288|P12 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10289|P13 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10290|P14 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10291|P15 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10292|P16 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10293|P17 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10294|P18 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10295|P19 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10296|P20 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10297|P21 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10298|P22 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10299|P23 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10300|P24 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+		
+				<!--Ports Speed-->
+				<Param name='1.3.6.1.2.1.2.2.1.5.10277|P1 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10278|P2 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10279|P3 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10280|P4 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10281|P5 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10282|P6 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10283|P7 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10284|P8 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10285|P9 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10286|P10 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10287|P11 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10288|P12 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10289|P13 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10290|P14 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10291|P15 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10292|P16 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10293|P17 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10294|P18 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10295|P19 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10296|P20 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10297|P21 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10298|P22 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10299|P23 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10300|P24 speed' value='1000000000' />
+			</Params>
+		</TestData>
+	 </Test>
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  SWITCH 1  [END]   					  # -->
+	<!-- #						      					  # -->
+	<!-- ################################################## -->
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		SWITCH 2 [START]						  # -->
+	<!-- #						      					  # -->
+	<!-- ################################################## -->
+
+
+
+	<Test id="SWITCH2_BIT" label="SWITCH 2 - BIT Status" subsystemId="SWITCH2" agentName="LOCAL" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+		<TestData>
+			<Class>SnmpMultiGet</Class>
+			<Params>
+			    <Param name='snmpVersion' value='2c' />    
+				<Param name='snmpCommunity' value='public' />
+				<Param name='snmpAgentIpAddr' value='192.168.0.57' />
+			    <Param name='oidTranslation' value='true' />
+			    <Param name='showLabels' value='true' />
+			    <Param name='showConstraints' value='true' />
+
+				<!--  Product Name as requested  -->
+				<Param name='1.3.6.1.2.1.1.1.0|Product ID' value='*' />
+
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.6.1005|Sensor #1 Temperature State|normal(1),warning(2),critical(3),shutdown(4),notPresent(5),notFunctioning(6)' value='1' />
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.6.1103|Sensor Power Supply 1A Temperature State|normal(1),warning(2),critical(3),shutdown(4),notPresent(5),notFunctioning(6)' value='1' />
+
+				<!--ciscoEnvMonTemperatureStatusValueRev1 OBJECT-TYPE
+						 SYNTAX     Integer32
+						 UNITS      "degrees Celsius"
+						 MAX-ACCESS read-only
+						 STATUS     current
+						 DESCRIPTION
+								 "The current measurement of the testpoint being instrumented.It also 
+								 accomodates negative temperature values."
+						 ::= { ciscoEnvMonTemperatureStatusEntry 7 }-->
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.7.1005|Sensor #1 Temperature Value' value='*' />
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.7.1103|Sensor Power Supply 1A Temperature Value' value='*' />
+
+				<!--ciscoEnvMonSupplyState OBJECT-TYPE
+						SYNTAX     CiscoEnvMonState
+						MAX-ACCESS read-only
+						STATUS     current
+						DESCRIPTION
+								"The current state of the power supply being instrumented."
+						::= { ciscoEnvMonSupplyStatusEntry 3 }
+
+				CiscoEnvMonState ::= TEXTUAL-CONVENTION
+						STATUS  current
+						DESCRIPTION
+								"Represents the state of a device being monitored.
+								 Valid values are:
+
+								 normal(1):         the environment is good, such as low
+								                    temperature.
+
+								 warning(2):        the environment is bad, such as temperature
+								                    above normal operation range but not too
+								                    high.
+
+								 critical(3):       the environment is very bad, such as
+								                    temperature much higher than normal
+								                    operation limit.
+
+								 shutdown(4):       the environment is the worst, the system
+								                    should be shutdown immediately.
+
+								 notPresent(5):     the environmental monitor is not present,
+								                    such as temperature sensors do not exist.
+
+								 notFunctioning(6): the environmental monitor does not 
+								                    function properly, such as a temperature
+								                    sensor generates a abnormal data like
+								                    1000 C.
+								"
+						SYNTAX  INTEGER {
+								        normal(1),
+								        warning(2),
+								        critical(3),
+								        shutdown(4),
+								        notPresent(5),
+								        notFunctioning(6)
+								}-->
+
+				<Param name='1.3.6.1.4.1.9.9.13.1.5.1.3.1054|PSU1 Supply State|normal(1),warning(2),critical(3),shutdown(4),notPresent(5),notFunctioning(6)' value='1' /> 
+
+				<!--ciscoEnvMonSupplySource OBJECT-TYPE
+						SYNTAX INTEGER {
+								        unknown(1),
+								        ac(2),
+								        dc(3),
+								        externalPowerSupply(4),
+								        internalRedundant(5)
+								}
+						MAX-ACCESS read-only
+						STATUS     current
+						DESCRIPTION
+								"The power supply source.
+								 unknown - Power supply source unknown
+								 ac      - AC power supply
+								 dc      - DC power supply
+								 externalPowerSupply - External power supply
+								 internalRedundant - Internal redundant power supply 
+								"
+						::= { ciscoEnvMonSupplyStatusEntry 4 }
+				-->
+
+				<Param name='1.3.6.1.4.1.9.9.13.1.5.1.4.1054|PSU1 Supply Source|unknown(1),ac(2),dc(3),externalPowerSupply(4),internalRedundant(5)' value='2' /> 
+			</Params>
+		</TestData>
+	 </Test>
+
+
+
+
+	<Test id="SWITCH2_PORT_STATUS" label="SWITCH 2 - Ports Status" subsystemId="SWITCH2" agentName="LOCAL" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+		<TestData>
+			<Class>SnmpMultiGet</Class>
+			<Params>
+			    <Param name='snmpVersion' value='2c' />    
+				<Param name='snmpCommunity' value='public' />
+				<Param name='snmpAgentIpAddr' value='192.168.0.57' />
+			    <Param name='oidTranslation' value='true' />
+			    <Param name='showLabels' value='true' />
+			    <Param name='showConstraints' value='true' />
+
+				<!--Ports Operative Status-->
+				<Param name='1.3.6.1.2.1.2.2.1.8.10277|P1 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10278|P2 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10279|P3 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10280|P4 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10281|P5 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10282|P6 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10283|P7 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10284|P8 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10285|P9 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10286|P10 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10287|P11 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10288|P12 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10289|P13 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10290|P14 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10291|P15 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10292|P16 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10293|P17 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10294|P18 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10295|P19 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10296|P20 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10297|P21 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10298|P22 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10299|P23 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10300|P24 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+		
+				<!--Ports Speed-->
+				<Param name='1.3.6.1.2.1.2.2.1.5.10277|P1 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10278|P2 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10279|P3 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10280|P4 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10281|P5 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10282|P6 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10283|P7 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10284|P8 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10285|P9 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10286|P10 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10287|P11 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10288|P12 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10289|P13 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10290|P14 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10291|P15 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10292|P16 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10293|P17 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10294|P18 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10295|P19 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10296|P20 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10297|P21 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10298|P22 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10299|P23 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10300|P24 speed' value='1000000000' />
+			</Params>
+		</TestData>
+	 </Test>
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  SWITCH 2  [END]   					  # -->
+	<!-- #						      					  # -->
+	<!-- ################################################## -->
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		SWITCH 3 [START]						  # -->
+	<!-- #						      					  # -->
+	<!-- ################################################## -->
+
+	<Test id="SWITCH3_BIT" label="SWITCH 3 - BIT Status" subsystemId="SWITCH3" agentName="LOCAL" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+		<TestData>
+			<Class>SnmpMultiGet</Class>
+			<Params>
+			    <Param name='snmpVersion' value='2c' />    
+				<Param name='snmpCommunity' value='public' />
+				<Param name='snmpAgentIpAddr' value='192.168.0.57' />
+			    <Param name='oidTranslation' value='true' />
+			    <Param name='showLabels' value='true' />
+			    <Param name='showConstraints' value='true' />
+
+				<!--  Product Name as requested  -->
+				<Param name='1.3.6.1.2.1.1.1.0|Product ID' value='*' />
+
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.6.1005|Sensor #1 Temperature State|normal(1),warning(2),critical(3),shutdown(4),notPresent(5),notFunctioning(6)' value='1' />
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.6.1103|Sensor Power Supply 1A Temperature State|normal(1),warning(2),critical(3),shutdown(4),notPresent(5),notFunctioning(6)' value='1' />
+
+				<!--ciscoEnvMonTemperatureStatusValueRev1 OBJECT-TYPE
+						 SYNTAX     Integer32
+						 UNITS      "degrees Celsius"
+						 MAX-ACCESS read-only
+						 STATUS     current
+						 DESCRIPTION
+								 "The current measurement of the testpoint being instrumented.It also 
+								 accomodates negative temperature values."
+						 ::= { ciscoEnvMonTemperatureStatusEntry 7 }-->
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.7.1005|Sensor #1 Temperature Value' value='*' />
+				<Param name='1.3.6.1.4.1.9.9.13.1.3.1.7.1103|Sensor Power Supply 1A Temperature Value' value='*' />
+
+				<!--ciscoEnvMonSupplyState OBJECT-TYPE
+						SYNTAX     CiscoEnvMonState
+						MAX-ACCESS read-only
+						STATUS     current
+						DESCRIPTION
+								"The current state of the power supply being instrumented."
+						::= { ciscoEnvMonSupplyStatusEntry 3 }
+
+				CiscoEnvMonState ::= TEXTUAL-CONVENTION
+						STATUS  current
+						DESCRIPTION
+								"Represents the state of a device being monitored.
+								 Valid values are:
+
+								 normal(1):         the environment is good, such as low
+								                    temperature.
+
+								 warning(2):        the environment is bad, such as temperature
+								                    above normal operation range but not too
+								                    high.
+
+								 critical(3):       the environment is very bad, such as
+								                    temperature much higher than normal
+								                    operation limit.
+
+								 shutdown(4):       the environment is the worst, the system
+								                    should be shutdown immediately.
+
+								 notPresent(5):     the environmental monitor is not present,
+								                    such as temperature sensors do not exist.
+
+								 notFunctioning(6): the environmental monitor does not 
+								                    function properly, such as a temperature
+								                    sensor generates a abnormal data like
+								                    1000 C.
+								"
+						SYNTAX  INTEGER {
+								        normal(1),
+								        warning(2),
+								        critical(3),
+								        shutdown(4),
+								        notPresent(5),
+								        notFunctioning(6)
+								}-->
+
+				<Param name='1.3.6.1.4.1.9.9.13.1.5.1.3.1054|PSU1 Supply State|normal(1),warning(2),critical(3),shutdown(4),notPresent(5),notFunctioning(6)' value='1' /> 
+
+				<!--ciscoEnvMonSupplySource OBJECT-TYPE
+						SYNTAX INTEGER {
+								        unknown(1),
+								        ac(2),
+								        dc(3),
+								        externalPowerSupply(4),
+								        internalRedundant(5)
+								}
+						MAX-ACCESS read-only
+						STATUS     current
+						DESCRIPTION
+								"The power supply source.
+								 unknown - Power supply source unknown
+								 ac      - AC power supply
+								 dc      - DC power supply
+								 externalPowerSupply - External power supply
+								 internalRedundant - Internal redundant power supply 
+								"
+						::= { ciscoEnvMonSupplyStatusEntry 4 }
+				-->
+
+				<Param name='1.3.6.1.4.1.9.9.13.1.5.1.4.1054|PSU1 Supply Source|unknown(1),ac(2),dc(3),externalPowerSupply(4),internalRedundant(5)' value='2' /> 
+			</Params>
+		</TestData>
+	 </Test>
+
+	<Test id="SWITCH3_PORT_STATUS" label="SWITCH 3 - Ports Status" subsystemId="SWITCH3" agentName="LOCAL" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,NETWORKING">
+		<TestData>
+			<Class>SnmpMultiGet</Class>
+			<Params>
+			    <Param name='snmpVersion' value='2c' />    
+				<Param name='snmpCommunity' value='public' />
+				<Param name='snmpAgentIpAddr' value='192.168.0.57' />
+			    <Param name='oidTranslation' value='true' />
+			    <Param name='showLabels' value='true' />
+			    <Param name='showConstraints' value='true' />
+
+				<!--Ports Operative Status-->
+				<Param name='1.3.6.1.2.1.2.2.1.8.10277|P1 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10278|P2 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10279|P3 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10280|P4 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10281|P5 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10282|P6 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10283|P7 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10284|P8 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10285|P9 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10286|P10 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10287|P11 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10288|P12 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='1' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10289|P13 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10290|P14 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10291|P15 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10292|P16 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10293|P17 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10294|P18 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10295|P19 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10296|P20 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10297|P21 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10298|P22 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10299|P23 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+				<Param name='1.3.6.1.2.1.2.2.1.8.10300|P24 Status|up(1),down(2),testing(3),unknown(4),dormant(5),notPresent(6),lowerLayerDown(7)' value='2' />
+		
+				<!--Ports Speed-->
+				<Param name='1.3.6.1.2.1.2.2.1.5.10277|P1 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10278|P2 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10279|P3 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10280|P4 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10281|P5 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10282|P6 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10283|P7 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10284|P8 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10285|P9 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10286|P10 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10287|P11 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10288|P12 Speed' value='1000000000' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10289|P13 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10290|P14 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10291|P15 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10292|P16 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10293|P17 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10294|P18 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10295|P19 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10296|P20 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10297|P21 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10298|P22 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10299|P23 Speed' value='*' />
+				<Param name='1.3.6.1.2.1.2.2.1.5.10300|P24 speed' value='*' />
+			</Params>
+		</TestData>
+	 </Test>
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  SWITCH 3  [END]   					  # -->
+	<!-- #						      					  # -->
+	<!-- ################################################## -->
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		 	 SBC1 	 [START]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ####  SBC1 PBIT [START] #### -->
+
+	<Test id="SBC1_PBIT" label="SBC1 - PBIT" subsystemId="SBC1" type="AUTO" agentName="SBC1" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>ProcessingUnitPbit</Class>
+	<Params>
+	  <Param name="unitId" value="TRG4X"/>
+	  <Param name="showBiosInfo" value="TRUE"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC1_RAM_INFO" label="SBC1 - Ram Info" subsystemId="SBC1" type="AUTO" agentName="SBC1" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamInfo</Class>
+	<Params>
+	  <Param name="memorySizeMb" value="range: min = 61440 max = *"/>
+	  <Param name="viewBankDetails" value="yes"/>
+	  <Param name="viewMemoryDetails" value="no"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC1_RAM_TEST" label="SBC1 - Ram Test" subsystemId="SBC1" type="AUTO" agentName="SBC1" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamTest</Class>
+	<Params>
+	  <Param name="testList" value="StuckAddress;WalkingOnes;WalkingZeroes;8-bitWrites;16-bitWrites"/>
+	  <Param name="memoryQuantity" value="100"/>
+	  <Param name="memoryMeasureUnit" value="kb"/>
+	  <Param name="iterations" value="1"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC1_M2_TEST" label="SBC1 - M2 Disk Test" subsystemId="SBC1" type="SEQUENCE" categoriesId="PBIT,STORAGE,ALL">
+		<SlaveTestSequence>
+			<Test id="SBC1_SSD_HEALTH" label="SBC1 - M2 SMART Overall Health" subsystemId="SBC1" type="AUTO" agentName="SBC1" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddOverallHealth</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+			
+			<Test id="SBC1_SSD_TEST" label="SBC1 - M2 Info" subsystemId="SBC1" type="AUTO" agentName="SBC1" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddInfo</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+		</SlaveTestSequence>
+	</Test>
+
+	<!-- #### SBC1 PBIT [END] #### -->
+
+	<Test id="SBC1_SENSORS" label="SBC1 - Sensors Status" subsystemId="SBC1" agentName="SBC1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+		<TestData>
+			<Class>Sensors</Class>
+			<Params>
+				<Param name='i350bb@0b00|loc1|input|LABEL:loc1 temp|UNIT:C' value='range: min= * max=110' />
+				<Param name='coretemp|Package id 0|input|LABEL: Package id 0 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 4|input|LABEL:CPU Core 4 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 5|input|LABEL:CPU Core 5 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 8|input|LABEL:CPU Core 8 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 9|input|LABEL:CPU Core 9 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 10|input|LABEL:CPU Core 10 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 11|input|LABEL:CPU Core 11 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 12|input|LABEL:CPU Core 12 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 13|input|LABEL:CPU Core 13 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='showLabel' value='TRUE' />
+				<Param name='showUnit' value='TRUE' />
+			</Params>
+		</TestData>
+	</Test>
+
+	<Test id="SBC1_ETH0_STATUS" label="SBC1 - ETH0 Link Status" subsystemId="SBC1" type="AUTO" agentName="SBC1" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth0"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="1000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC1_ETH1_STATUS" label="SBC1 - ETH1 Link Status" subsystemId="SBC1" type="AUTO" agentName="SBC1" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth1"/>
+	  <Param name="linkStatus" value="DOWN"/>
+	  <Param name="linkMode" value="*"/>
+	  <Param name="linkSpeed" value="*"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC1_ETH2_STATUS" label="SBC1 - ETH2 Link Status" subsystemId="SBC1" type="AUTO" agentName="SBC1" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth2"/>
+	  <Param name="linkStatus" value="DOWN"/>
+	  <Param name="linkMode" value="*"/>
+	  <Param name="linkSpeed" value="*"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  	SBC1 	 [END]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		 	 SBC2 	 [START]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ####  SBC2 PBIT [START] #### -->
+
+	<Test id="SBC2_PBIT" label="SBC2 - PBIT" subsystemId="SBC2" type="AUTO" agentName="SBC2" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>ProcessingUnitPbit</Class>
+	<Params>
+	  <Param name="unitId" value="TRG4X"/>
+	  <Param name="showBiosInfo" value="TRUE"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC2_RAM_INFO" label="SBC2 - Ram Info" subsystemId="SBC2" type="AUTO" agentName="SBC2" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamInfo</Class>
+	<Params>
+	  <Param name="memorySizeMb" value="range: min = 61440 max = *"/>
+	  <Param name="viewBankDetails" value="yes"/>
+	  <Param name="viewMemoryDetails" value="no"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC2_RAM_TEST" label="SBC2 - Ram Test" subsystemId="SBC2" type="AUTO" agentName="SBC2" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamTest</Class>
+	<Params>
+	  <Param name="testList" value="StuckAddress;WalkingOnes;WalkingZeroes;8-bitWrites;16-bitWrites"/>
+	  <Param name="memoryQuantity" value="100"/>
+	  <Param name="memoryMeasureUnit" value="kb"/>
+	  <Param name="iterations" value="1"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC2_M2_TEST" label="SBC2 - M2 Disk Test" subsystemId="SBC2" type="SEQUENCE" categoriesId="PBIT,STORAGE,ALL">
+		<SlaveTestSequence>
+			<Test id="SBC2_SSD_HEALTH" label="SBC2 - M2 SMART Overall Health" subsystemId="SBC2" type="AUTO" agentName="SBC2" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddOverallHealth</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+			
+			<Test id="SBC2_SSD_TEST" label="SBC2 - M2 Info" subsystemId="SBC2" type="AUTO" agentName="SBC2" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddInfo</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+		</SlaveTestSequence>
+	</Test>
+
+	<!-- #### SBC2 PBIT [END] #### -->
+
+	<Test id="SBC2_SENSORS" label="SBC2 - Sensors Status" subsystemId="SBC2" agentName="SBC2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+		<TestData>
+			<Class>Sensors</Class>
+			<Params>
+				<Param name='i350bb@0b00|loc1|input|LABEL:loc1 temp|UNIT:C' value='range: min= * max=110' />
+				<Param name='coretemp|Package id 0|input|LABEL: Package id 0 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 4|input|LABEL:CPU Core 4 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 5|input|LABEL:CPU Core 5 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 8|input|LABEL:CPU Core 8 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 9|input|LABEL:CPU Core 9 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 10|input|LABEL:CPU Core 10 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 11|input|LABEL:CPU Core 11 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 12|input|LABEL:CPU Core 12 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 13|input|LABEL:CPU Core 13 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='showLabel' value='TRUE' />
+				<Param name='showUnit' value='TRUE' />
+			</Params>
+		</TestData>
+	</Test>
+
+	<Test id="SBC2_ETH0_STATUS" label="SBC2 - ETH0 Link Status" subsystemId="SBC2" type="AUTO" agentName="SBC2" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth0"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="1000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC2_ETH1_STATUS" label="SBC2 - ETH1 Link Status" subsystemId="SBC2" type="AUTO" agentName="SBC2" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth1"/>
+	  <Param name="linkStatus" value="DOWN"/>
+	  <Param name="linkMode" value="*"/>
+	  <Param name="linkSpeed" value="*"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC2_ETH2_STATUS" label="SBC2 - ETH2 Link Status" subsystemId="SBC2" type="AUTO" agentName="SBC2" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth2"/>
+	  <Param name="linkStatus" value="DOWN"/>
+	  <Param name="linkMode" value="*"/>
+	  <Param name="linkSpeed" value="*"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  	SBC2 	 [END]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		 	 SBC3 	 [START]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ####  SBC3 PBIT [START] #### -->
+
+	<Test id="SBC3_PBIT" label="SBC3 - PBIT" subsystemId="SBC3" type="AUTO" agentName="SBC3" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>ProcessingUnitPbit</Class>
+	<Params>
+	  <Param name="unitId" value="TRG4X"/>
+	  <Param name="showBiosInfo" value="TRUE"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC3_RAM_INFO" label="SBC3 - Ram Info" subsystemId="SBC3" type="AUTO" agentName="SBC3" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamInfo</Class>
+	<Params>
+	  <Param name="memorySizeMb" value="range: min = 61440 max = *"/>
+	  <Param name="viewBankDetails" value="yes"/>
+	  <Param name="viewMemoryDetails" value="no"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC3_RAM_TEST" label="SBC3 - Ram Test" subsystemId="SBC3" type="AUTO" agentName="SBC3" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamTest</Class>
+	<Params>
+	  <Param name="testList" value="StuckAddress;WalkingOnes;WalkingZeroes;8-bitWrites;16-bitWrites"/>
+	  <Param name="memoryQuantity" value="100"/>
+	  <Param name="memoryMeasureUnit" value="kb"/>
+	  <Param name="iterations" value="1"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC3_M2_TEST" label="SBC3 - M2 Disk Test" subsystemId="SBC3" type="SEQUENCE" categoriesId="PBIT,STORAGE,ALL">
+		<SlaveTestSequence>
+			<Test id="SBC3_SSD_HEALTH" label="SBC3 - M2 SMART Overall Health" subsystemId="SBC3" type="AUTO" agentName="SBC3" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddOverallHealth</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+			
+			<Test id="SBC3_SSD_TEST" label="SBC3 - M2 Info" subsystemId="SBC3" type="AUTO" agentName="SBC3" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddInfo</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+		</SlaveTestSequence>
+	</Test>
+
+	<!-- #### SBC3 PBIT [END] #### -->
+
+	<Test id="SBC3_SENSORS" label="SBC3 - Sensors Status" subsystemId="SBC3" agentName="SBC3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+		<TestData>
+			<Class>Sensors</Class>
+			<Params>
+				<Param name='i350bb@0b00|loc1|input|LABEL:loc1 temp|UNIT:C' value='range: min= * max=110' />
+				<Param name='coretemp|Package id 0|input|LABEL: Package id 0 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 4|input|LABEL:CPU Core 4 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 5|input|LABEL:CPU Core 5 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 8|input|LABEL:CPU Core 8 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 9|input|LABEL:CPU Core 9 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 10|input|LABEL:CPU Core 10 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 11|input|LABEL:CPU Core 11 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 12|input|LABEL:CPU Core 12 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 13|input|LABEL:CPU Core 13 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='showLabel' value='TRUE' />
+				<Param name='showUnit' value='TRUE' />
+			</Params>
+		</TestData>
+	</Test>
+
+	<Test id="SBC3_ETH0_STATUS" label="SBC3 - ETH0 Link Status" subsystemId="SBC3" type="AUTO" agentName="SBC3" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth0"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="1000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC3_ETH1_STATUS" label="SBC3 - ETH1 Link Status" subsystemId="SBC3" type="AUTO" agentName="SBC3" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth1"/>
+	  <Param name="linkStatus" value="DOWN"/>
+	  <Param name="linkMode" value="*"/>
+	  <Param name="linkSpeed" value="*"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SBC3_ETH2_STATUS" label="SBC3 - ETH2 Link Status" subsystemId="SBC3" type="AUTO" agentName="SBC3" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth2"/>
+	  <Param name="linkStatus" value="DOWN"/>
+	  <Param name="linkMode" value="*"/>
+	  <Param name="linkSpeed" value="*"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  	SBC3 	 [END]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		 	 WS1 	 [START]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ####  WS1 PBIT [START] #### -->
+
+	<Test id="WS1_PBIT" label="WS1 - PBIT" subsystemId="WS1" type="AUTO" agentName="WS1" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>ProcessingUnitPbit</Class>
+	<Params>
+	  <Param name="unitId" value="TRG4X"/>
+	  <Param name="showBiosInfo" value="TRUE"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS1_RAM_INFO" label="WS1 - Ram Info" subsystemId="WS1" type="AUTO" agentName="WS1" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamInfo</Class>
+	<Params>
+	  <Param name="memorySizeMb" value="range: min = 61440 max = *"/>
+	  <Param name="viewBankDetails" value="yes"/>
+	  <Param name="viewMemoryDetails" value="no"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS1_RAM_TEST" label="WS1 - Ram Test" subsystemId="WS1" type="AUTO" agentName="WS1" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamTest</Class>
+	<Params>
+	  <Param name="testList" value="StuckAddress;WalkingOnes;WalkingZeroes;8-bitWrites;16-bitWrites"/>
+	  <Param name="memoryQuantity" value="100"/>
+	  <Param name="memoryMeasureUnit" value="kb"/>
+	  <Param name="iterations" value="1"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS1_M2_TEST" label="WS1 - M2 Disk Test" subsystemId="WS1" type="SEQUENCE" categoriesId="PBIT,STORAGE,ALL">
+		<SlaveTestSequence>
+			<Test id="WS1_SSD_HEALTH" label="WS1 - M2 SMART Overall Health" subsystemId="WS1" type="AUTO" agentName="WS1" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddOverallHealth</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+			
+			<Test id="WS1_SSD_TEST" label="WS1 - M2 Info" subsystemId="WS1" type="AUTO" agentName="WS1" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddInfo</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+		</SlaveTestSequence>
+	</Test>
+
+	<!-- #### WS1 PBIT [END] #### -->
+
+	<Test id="WS1_SENSORS" label="WS1 - Sensors Status" subsystemId="WS1" agentName="WS1" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+		<TestData>
+			<Class>Sensors</Class>
+			<Params>
+				<Param name='i350bb@0b00|loc1|input|LABEL:loc1 temp|UNIT:C' value='range: min= * max=110' />
+				<Param name='coretemp|Package id 0|input|LABEL: Package id 0 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 4|input|LABEL:CPU Core 4 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 5|input|LABEL:CPU Core 5 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 8|input|LABEL:CPU Core 8 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 9|input|LABEL:CPU Core 9 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 10|input|LABEL:CPU Core 10 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 11|input|LABEL:CPU Core 11 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 12|input|LABEL:CPU Core 12 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 13|input|LABEL:CPU Core 13 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='showLabel' value='TRUE' />
+				<Param name='showUnit' value='TRUE' />
+			</Params>
+		</TestData>
+	</Test>
+
+	<Test id="WS1_ETH0_STATUS" label="WS1 - ETH0 Link Status" subsystemId="WS1" type="AUTO" agentName="WS1" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth0"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="1000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS1_ETH1_STATUS" label="WS1 - ETH1 Link Status" subsystemId="WS1" type="AUTO" agentName="WS1" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth1"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="10000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  	WS1 	 [END]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		 	 WS2 	 [START]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ####  WS2 PBIT [START] #### -->
+
+	<Test id="WS2_PBIT" label="WS2 - PBIT" subsystemId="WS2" type="AUTO" agentName="WS2" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>ProcessingUnitPbit</Class>
+	<Params>
+	  <Param name="unitId" value="TRG4X"/>
+	  <Param name="showBiosInfo" value="TRUE"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS2_RAM_INFO" label="WS2 - Ram Info" subsystemId="WS2" type="AUTO" agentName="WS2" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamInfo</Class>
+	<Params>
+	  <Param name="memorySizeMb" value="range: min = 61440 max = *"/>
+	  <Param name="viewBankDetails" value="yes"/>
+	  <Param name="viewMemoryDetails" value="no"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS2_RAM_TEST" label="WS2 - Ram Test" subsystemId="WS2" type="AUTO" agentName="WS2" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamTest</Class>
+	<Params>
+	  <Param name="testList" value="StuckAddress;WalkingOnes;WalkingZeroes;8-bitWrites;16-bitWrites"/>
+	  <Param name="memoryQuantity" value="100"/>
+	  <Param name="memoryMeasureUnit" value="kb"/>
+	  <Param name="iterations" value="1"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS2_M2_TEST" label="WS2 - M2 Disk Test" subsystemId="WS2" type="SEQUENCE" categoriesId="PBIT,STORAGE,ALL">
+		<SlaveTestSequence>
+			<Test id="WS2_SSD_HEALTH" label="WS2 - M2 SMART Overall Health" subsystemId="WS2" type="AUTO" agentName="WS2" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddOverallHealth</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+			
+			<Test id="WS2_SSD_TEST" label="WS2 - M2 Info" subsystemId="WS2" type="AUTO" agentName="WS2" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddInfo</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+		</SlaveTestSequence>
+	</Test>
+
+	<!-- #### WS2 PBIT [END] #### -->
+
+	<Test id="WS2_SENSORS" label="WS2 - Sensors Status" subsystemId="WS2" agentName="WS2" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+		<TestData>
+			<Class>Sensors</Class>
+			<Params>
+				<Param name='i350bb@0b00|loc1|input|LABEL:loc1 temp|UNIT:C' value='range: min= * max=110' />
+				<Param name='coretemp|Package id 0|input|LABEL: Package id 0 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 4|input|LABEL:CPU Core 4 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 5|input|LABEL:CPU Core 5 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 8|input|LABEL:CPU Core 8 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 9|input|LABEL:CPU Core 9 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 10|input|LABEL:CPU Core 10 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 11|input|LABEL:CPU Core 11 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 12|input|LABEL:CPU Core 12 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 13|input|LABEL:CPU Core 13 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='showLabel' value='TRUE' />
+				<Param name='showUnit' value='TRUE' />
+			</Params>
+		</TestData>
+	</Test>
+
+	<Test id="WS2_ETH0_STATUS" label="WS2 - ETH0 Link Status" subsystemId="WS2" type="AUTO" agentName="WS2" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth0"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="1000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS2_ETH1_STATUS" label="WS2 - ETH1 Link Status" subsystemId="WS2" type="AUTO" agentName="WS2" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth1"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="10000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  	WS2 	 [END]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		 	 WS3 	 [START]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ####  WS3 PBIT [START] #### -->
+
+	<Test id="WS3_PBIT" label="WS3 - PBIT" subsystemId="WS3" type="AUTO" agentName="WS3" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>ProcessingUnitPbit</Class>
+	<Params>
+	  <Param name="unitId" value="TRG4X"/>
+	  <Param name="showBiosInfo" value="TRUE"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS3_RAM_INFO" label="WS3 - Ram Info" subsystemId="WS3" type="AUTO" agentName="WS3" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamInfo</Class>
+	<Params>
+	  <Param name="memorySizeMb" value="range: min = 61440 max = *"/>
+	  <Param name="viewBankDetails" value="yes"/>
+	  <Param name="viewMemoryDetails" value="no"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS3_RAM_TEST" label="WS3 - Ram Test" subsystemId="WS3" type="AUTO" agentName="WS3" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamTest</Class>
+	<Params>
+	  <Param name="testList" value="StuckAddress;WalkingOnes;WalkingZeroes;8-bitWrites;16-bitWrites"/>
+	  <Param name="memoryQuantity" value="100"/>
+	  <Param name="memoryMeasureUnit" value="kb"/>
+	  <Param name="iterations" value="1"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS3_M2_TEST" label="WS3 - M2 Disk Test" subsystemId="WS3" type="SEQUENCE" categoriesId="PBIT,STORAGE,ALL">
+		<SlaveTestSequence>
+			<Test id="WS3_SSD_HEALTH" label="WS3 - M2 SMART Overall Health" subsystemId="WS3" type="AUTO" agentName="WS3" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddOverallHealth</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+			
+			<Test id="WS3_SSD_TEST" label="WS3 - M2 Info" subsystemId="WS3" type="AUTO" agentName="WS3" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddInfo</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+		</SlaveTestSequence>
+	</Test>
+
+	<!-- #### WS3 PBIT [END] #### -->
+
+	<Test id="WS3_SENSORS" label="WS3 - Sensors Status" subsystemId="WS3" agentName="WS3" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+		<TestData>
+			<Class>Sensors</Class>
+			<Params>
+				<Param name='i350bb@0b00|loc1|input|LABEL:loc1 temp|UNIT:C' value='range: min= * max=110' />
+				<Param name='coretemp|Package id 0|input|LABEL: Package id 0 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 4|input|LABEL:CPU Core 4 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 5|input|LABEL:CPU Core 5 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 8|input|LABEL:CPU Core 8 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 9|input|LABEL:CPU Core 9 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 10|input|LABEL:CPU Core 10 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 11|input|LABEL:CPU Core 11 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 12|input|LABEL:CPU Core 12 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 13|input|LABEL:CPU Core 13 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='showLabel' value='TRUE' />
+				<Param name='showUnit' value='TRUE' />
+			</Params>
+		</TestData>
+	</Test>
+
+	<Test id="WS3_ETH0_STATUS" label="WS3 - ETH0 Link Status" subsystemId="WS3" type="AUTO" agentName="WS3" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth0"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="1000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="WS3_ETH1_STATUS" label="WS3 - ETH1 Link Status" subsystemId="WS3" type="AUTO" agentName="WS3" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth1"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="10000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  	WS3 	 [END]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		 	 SERVER 	 [START]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->	
+
+	<!-- ####  SERVER PBIT [START] #### -->
+
+	<Test id="SERVER_PBIT" label="SERVER - PBIT" subsystemId="SERVER" type="AUTO" agentName="SERVER" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>ProcessingUnitPbit</Class>
+	<Params>
+	  <Param name="unitId" value="TRG4X"/>
+	  <Param name="showBiosInfo" value="TRUE"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SERVER_RAM_INFO" label="SERVER - Ram Info" subsystemId="SERVER" type="AUTO" agentName="SERVER" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamInfo</Class>
+	<Params>
+	  <Param name="memorySizeMb" value="range: min = 61440 max = *"/>
+	  <Param name="viewBankDetails" value="yes"/>
+	  <Param name="viewMemoryDetails" value="no"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SERVER_RAM_TEST" label="SERVER - Ram Test" subsystemId="SERVER" type="AUTO" agentName="SERVER" categoriesId="PBIT,ALL">
+	<TestData>
+	<Class>RamTest</Class>
+	<Params>
+	  <Param name="testList" value="StuckAddress;WalkingOnes;WalkingZeroes;8-bitWrites;16-bitWrites"/>
+	  <Param name="memoryQuantity" value="100"/>
+	  <Param name="memoryMeasureUnit" value="kb"/>
+	  <Param name="iterations" value="1"/>
+	</Params>
+	</TestData>
+	</Test>
+
+	<Test id="SERVER_M2_TEST" label="SERVER - M2 Disk Test" subsystemId="SERVER" type="SEQUENCE" categoriesId="PBIT,STORAGE,ALL">
+		<SlaveTestSequence>
+			<Test id="SERVER_SSD_HEALTH" label="SERVER - M2 SMART Overall Health" subsystemId="SERVER" type="AUTO" agentName="SERVER" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddOverallHealth</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+			
+			<Test id="SERVER_SSD_TEST" label="SERVER - M2 Info" subsystemId="SERVER" type="AUTO" agentName="SERVER" categoriesId="PBIT,STORAGE,ALL">
+			<TestData>
+			<Class>SmartHddInfo</Class>
+			<Params>
+			  <Param name="device" value="/dev/nvme0"/>
+			</Params>
+			</TestData>
+			</Test>
+		</SlaveTestSequence>
+	</Test>
+
+	<!-- #### SERVER PBIT [END] #### -->
+
+	<Test id="SERVER_SENSORS" label="SERVER - Sensors Status" subsystemId="SERVER" agentName="SERVER" type="AUTO" iterationDelayMsec="2000" categoriesId="ALL,TEMPERATURE">
+		<TestData>
+			<Class>Sensors</Class>
+			<Params>
+				<Param name='i350bb@0b00|loc1|input|LABEL:loc1 temp|UNIT:C' value='range: min= * max=110' />
+				<Param name='coretemp|Package id 0|input|LABEL: Package id 0 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='coretemp|Core 0|input|LABEL:CPU Core 0 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 1|input|LABEL:CPU Core 1 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 2|input|LABEL:CPU Core 2 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 3|input|LABEL:CPU Core 3 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 4|input|LABEL:CPU Core 4 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 5|input|LABEL:CPU Core 5 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 8|input|LABEL:CPU Core 8 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 9|input|LABEL:CPU Core 9 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 10|input|LABEL:CPU Core 10 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 11|input|LABEL:CPU Core 11 Temperature|UNIT:C' value='range: min= * max=107' />
+				<Param name='coretemp|Core 12|input|LABEL:CPU Core 12 Temperature|UNIT:C' value='range: min= * max=107' />	
+				<Param name='coretemp|Core 13|input|LABEL:CPU Core 13 Temperature|UNIT:C' value='range: min= * max=107' />
+			    <Param name='showLabel' value='TRUE' />
+				<Param name='showUnit' value='TRUE' />
+			</Params>
+		</TestData>
+	</Test>
+
+	<Test id="SERVER_ETH0_STATUS" label="SERVER - ETH0 Link Status" subsystemId="SERVER" type="AUTO" agentName="SERVER" categoriesId="NETWORKING,ALL">
+	<TestData>
+	<Class>Ethernet</Class>
+	<Params>
+	  <Param name="device" value="eth0"/>
+	  <Param name="linkStatus" value="UP"/>
+	  <Param name="linkMode" value="FULL"/>
+	  <Param name="linkSpeed" value="1000"/>
+	  <Param name="showInfo" value="true"/>
+	</Params>
+	</TestData>
+	</Test>
+
+
+	<!-- ################################################## -->
+	<!-- #						      					  # -->
+	<!-- #		  	SERVER 	 [END]      				  # -->
+	<!-- #				                                  # -->
+	<!-- ################################################## -->		
+	</TestList>
+
+	<MonitorList hide="yes" >
+	</MonitorList>
+              
+	<StressList hide="yes" >
+	</StressList>
+</Diagnostic>
