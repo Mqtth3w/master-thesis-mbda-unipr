@@ -1,0 +1,1207 @@
+test{GWS1 - Computer Unit PBIT}, test_result{PASS}, test_report{BIOS Vendor: American Megatrends International, LLC.
+BIOS Version: 5.19
+BIOS Date: 03/14/2023}, test_error{-}, test_had_error{False}
+test{GWS1 - Ram PBIT}, test_result{PASS}, test_report{Number of banks: 2
+bank: BANK 0
+Bank memory size : 32768 Mb
+bank: BANK 0
+Bank memory size : 32768 Mb
+Total memory size: 65536 Mb}, test_error{-}, test_had_error{False}
+test{GWS1 - SATA Flash Module PBIT}, test_result{PASS}, test_report{PASS}, test_error{-}, test_had_error{False}
+test{GWS1 - HW Configuration}, test_result{PASS}, test_report{——————
+GWS1 - RAM Memory PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 00:14.2 RAM memory: Intel Corporation Tiger Lake-LP Shared SRAM 0000:00:14.2 vendor=8086 device=a0ef class=0500 irq=0 (pin0) base0=4012324004 [OK]
+——————
+GWS1 - Audio Device PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 00:1f.3 Audio device: Intel Corporation Tiger Lake-LP Smart Sound Technology Audio Controller 0000:00:1f.3 vendor=8086 device=a0c8 class=0403 irq=0 (pin1) base0=4012320004 [OK]
+——————
+GWS1 - VGA Controller PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 01:00.0 VGA compatible controller: NVIDIA Corporation Device 1ff0 0000:01:00.0 vendor=10de device=1ff0 class=0300 irq=0 (pin 1) base0=80000000 [OK]
+——————
+GWS1 - Ethernet0 PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (13) I219-LM 0000:00:1f.6 vendor=8086 device=15fb class=0200 irq=0 (pin 1) base0=81200000 [OK]}, test_error{-}, test_had_error{False}
+test{GWS1 - SATA Flash Module Info}, test_result{PASS}, test_report{Ata Version: ACS-4, ATA8-ACS T13/1699-D revision 6
+Capacity: 480,103,981,056 bytes [480 GB]
+Device Family: Innodisk 3IE2/3ME2/3MG2/3SE2/3TG6 SSDs
+Firmware Version: A23110
+Model: SATA Slim 3TG6-P
+Rotation Rate: Solid State Device
+Sata Version: SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Sector Size: 512 bytes logical/physical
+Serial Number: BCA12210060480018}, test_error{-}, test_had_error{False}
+test{GWS1 - ETH0 Link Status}, test_result{PASS}, test_report{Status: UP
+Mode: FULL duplex
+Speed: 1000 Mb/s}, test_error{-}, test_had_error{False}
+test{GWS1 - Temperatures}, test_result{PASS}, test_report{Chassis: 27.8 C
+CPU Core 0 Temperature: 33 C
+CPU Core 1 Temperature: 35 C
+CPU Core 2 Temperature: 35 C
+CPU Core 3 Temperature: 32 C}, test_error{-}, test_had_error{False}
+test{GWS1 - Nvidia GPU Status}, test_result{PASS}, test_report{Product Name: NVIDIA Graphics Device
+Display Connected: YES
+Device Initialized: YES
+GPU UUID: GPU-3c9d8919-8507-03ed-434f-812cf9f7c571
+Driver Version: 470.63.01
+VBIOS Version: 90.17.91.00.01
+Inforom Image Version: G172.0505.00.01
+Inforom OEM Version: 1.1
+Performance state (0 max, 15 min): 8
+Memory size: 7983 MB
+GPU Clock: 300 MHz
+SM Clock: 300 MHz
+Memory Clock: 405 MHz
+GPU Load: 0 %
+Memory Load: 5 %
+GPU Temperature: 33 C}, test_error{-}, test_had_error{False}
+test{GWS2 - Computer Unit PBIT}, test_result{PASS}, test_report{BIOS Vendor: American Megatrends International, LLC.
+BIOS Version: 5.19
+BIOS Date: 03/14/2023}, test_error{-}, test_had_error{False}
+test{GWS2 - Ram PBIT}, test_result{PASS}, test_report{Number of banks: 2
+bank: BANK 0
+Bank memory size : 32768 Mb
+bank: BANK 0
+Bank memory size : 32768 Mb
+Total memory size: 65536 Mb}, test_error{-}, test_had_error{False}
+test{GWS2 - SATA Flash Module PBIT}, test_result{PASS}, test_report{PASS}, test_error{-}, test_had_error{False}
+test{GWS2 - HW Configuration}, test_result{PASS}, test_report{——————
+GWS2 - RAM Memory PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 00:14.2 RAM memory: Intel Corporation Tiger Lake-LP Shared SRAM 0000:00:14.2 vendor=8086 device=a0ef class=0500 irq=0 (pin0) base0=4012324004 [OK]
+——————
+GWS2 - Audio Device PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 00:1f.3 Audio device: Intel Corporation Tiger Lake-LP Smart Sound Technology Audio Controller 0000:00:1f.3 vendor=8086 device=a0c8 class=0403 irq=0 (pin1) base0=4012320004 [OK]
+——————
+GWS2 - VGA Controller PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 01:00.0 VGA compatible controller: NVIDIA Corporation Device 1ff0 0000:01:00.0 vendor=10de device=1ff0 class=0300 irq=0 (pin1) base0=80000000 [OK]
+——————
+GWS2 - Ethernet0 PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (13) I219-LM 0000:00:1f.6 vendor=8086 device=15fb class=0200 irq=0 (pin1) base0=81200000 [OK]}, test_error{-}, test_had_error{False}
+test{GWS2 - SATA Flash Module Info}, test_result{PASS}, test_report{Ata Version: ACS-4, ATA8-ACS T13/1699-D revision 6
+Capacity: 480,103,981,056 bytes [480 GB]
+Device Family: Innodisk 3IE2/3ME2/3MG2/3SE2/3TG6 SSDs
+Firmware Version: A23110
+Model: SATA Slim 3TG6-P
+Rotation Rate: Solid State Device
+Sata Version: SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Sector Size: 512 bytes logical/physical
+Serial Number: BCA12210060480018}, test_error{-}, test_had_error{False}
+test{GWS2 - ETH0 Link Status}, test_result{PASS}, test_report{Status: UP
+Mode: FULL duplex
+Speed: 1000 Mb/s}, test_error{-}, test_had_error{False}
+test{GWS2 - Temperatures}, test_result{PASS}, test_report{Chassis: 27.8 C
+CPU Core 0 Temperature: 33 C
+CPU Core 1 Temperature: 35 C
+CPU Core 2 Temperature: 35 C
+CPU Core 3 Temperature: 32 C}, test_error{-}, test_had_error{False}
+test{GWS2 - Nvidia GPU Status}, test_result{PASS}, test_report{Product Name: NVIDIA Graphics Device
+Display Connected: YES
+Device Initialized: YES
+GPU UUID: GPU-3c9d8919-8507-03ed-434f-812cf9f7c571
+Driver Version: 470.63.01
+VBIOS Version: 90.17.91.00.01
+Inforom Image Version: G172.0505.00.01
+Inforom OEM Version: 1.1
+Performance state (0 max, 15 min): 8
+Memory size: 7983 MB
+GPU Clock: 300 MHz
+SM Clock: 300 MHz
+Memory Clock: 405 MHz
+GPU Load: 0 %
+Memory Load: 5 %
+GPU Temperature: 33 C}, test_error{-}, test_had_error{False}
+test{GWS3 - Computer Unit PBIT}, test_result{PASS}, test_report{BIOS Vendor: American Megatrends International, LLC.
+BIOS Version: 5.19
+BIOS Date: 03/14/2023}, test_error{-}, test_had_error{False}
+test{GWS3 - Ram PBIT}, test_result{PASS}, test_report{Number of banks: 2
+bank: BANK 0
+Bank memory size : 32768 Mb
+bank: BANK 0
+Bank memory size : 32768 Mb
+Total memory size: 65536 Mb}, test_error{-}, test_had_error{False}
+test{GWS3 - SATA Flash Module PBIT}, test_result{PASS}, test_report{PASS}, test_error{-}, test_had_error{False}
+test{GWS3 - HW Configuration}, test_result{PASS}, test_report{——————
+GWS3 - RAM Memory PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 00:14.2 RAM memory: Intel Corporation Tiger Lake-LP Shared SRAM 0000:00:14.2 vendor=8086 device=a0ef class=0500 irq=0 (pin0) base0=4012324004 [OK]
+——————
+GWS3 - Audio Device PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 00:1f.3 Audio device: Intel Corporation Tiger Lake-LP Smart Sound Tech-
+nology Audio Controller 0000:00:1f.3 vendor=8086 device=a0c8 class=0403 irq=0 (pin1) base0=4012320004 [OK]
+——————
+GWS3 - VGA Controller PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 01:00.0 VGA compatible controller: NVIDIA Corporation Device 1ff0 0000:01:00.0 vendor=10de device=1ff0 class=0300 irq=0 (pin1) base0=80000000 [OK]
+——————
+GWS3 - Ethernet0 PCI
+——————
+Timestamp: Wed Oct 9 16:27:19 2024
+Result: PASS
+Report:
+- RAWDATA: 00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (13) I219-LM 0000:00:1f.6 vendor=8086 device=15fb class=0200 irq=0 (pin1) base0=81200000 [OK]}, test_error{-}, test_had_error{False}
+test{GWS3 - SATA Flash Module Info}, test_result{PASS}, test_report{Ata Version: ACS-4, ATA8-ACS T13/1699-D revision 6
+Capacity: 480,103,981,056 bytes [480 GB]
+Device Family: Innodisk 3IE2/3ME2/3MG2/3SE2/3TG6 SSDs
+Firmware Version: A23110
+Model: SATA Slim 3TG6-P
+Rotation Rate: Solid State Device
+Sata Version: SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Sector Size: 512 bytes logical/physical
+Serial Number: BCA12210060480018}, test_error{-}, test_had_error{False}
+test{GWS3 - ETH0 Link Status}, test_result{PASS}, test_report{Status: UP
+Mode: FULL duplex
+Speed: 1000 Mb/s}, test_error{-}, test_had_error{False}
+test{GWS3 - Temperatures}, test_result{PASS}, test_report{Chassis: 27.8 C
+CPU Core 0 Temperature: 33 C
+CPU Core 1 Temperature: 35 C
+CPU Core 2 Temperature: 35 C
+CPU Core 3 Temperature: 32 C}, test_error{-}, test_had_error{False}
+test{GWS3 - Nvidia GPU Status}, test_result{PASS}, test_report{Product Name: NVIDIA Graphics Device
+Display Connected: YES
+Device Initialized: YES
+GPU UUID: GPU-3c9d8919-8507-03ed-434f-812cf9f7c571
+Driver Version: 470.63.01
+VBIOS Version: 90.17.91.00.01
+Inforom Image Version: G172.0505.00.01
+Inforom OEM Version: 1.1
+Performance state (0 max, 15 min): 8
+Memory size: 7983 MB
+GPU Clock: 300 MHz
+SM Clock: 300 MHz
+Memory Clock: 405 MHz
+GPU Load: 0 %
+Memory Load: 5 %
+GPU Temperature: 33 C}, test_error{-}, test_had_error{False}
+test{SWITCH 1 - BIT Status}, test_result{PASS}, test_report{Product ID [ * ] : Cisco IOS Software, IE4010 Software (IE4010-UNIVERSALK9-M), Version 15.2(8)E1, RELEASE SOFTWARE (fc8) Technical Support: http://www.cisco.com/techsupport Copyright (c) 1986-2021 by Cisco Systems, Inc. Compiled Tue 12-Oct-21 05:09 by mcpre
+Sensor #1 Temperature State [ 1 ] : normal(1)
+Sensor Power Supply 1A Temperature State [ 1 ] : normal(1)
+Sensor #1 Temperature Value [ * ] : 48
+Sensor Power Supply 1A Temperature Value [ * ] : 50
+PSU1 Supply State [ 1 ] : normal(1)
+PSU1 Supply Source [ 2 ] : ac(2)}, test_error{-}, test_had_error{False}
+test{SWITCH 1 - Ports Status}, test_result{PASS}, test_report{P1 Speed [ 1000000000 ] : 1000000000
+P2 Speed [ 1000000000 ] : 1000000000
+P3 Speed [ 1000000000 ] : 1000000000
+P4 Speed [ * ] : 1000000000
+P5 Speed [ * ] : 10000000
+P6 Speed [ * ] : 10000000
+P7 Speed [ * ] : 10000000
+P8 Speed [ * ] : 10000000
+P9 Speed [ * ] : 10000000
+P10 Speed [ * ] : 10000000
+P11 Speed [ * ] : 10000000
+P12 Speed [ 1000000000 ] : 1000000000
+P13 Speed [ 1000000000 ] : 1000000000
+P14 Speed [ * ] : 10000000
+P15 Speed [ * ] : 10000000
+P16 Speed [ * ] : 10000000
+P17 Speed [ * ] : 10000000
+P18 Speed [ * ] : 10000000
+P19 Speed [ * ] : 10000000
+P20 Speed [ * ] : 10000000
+P21 Speed [ * ] : 10000000
+P22 Speed [ * ] : 10000000
+P23 Speed [ * ] : 10000000
+P24 speed [ 1000000000 ] : 1000000000
+P1 Status [ 1 ] : up(1)
+P2 Status [ 1 ] : up(1)
+P3 Status [ 1 ] : up(1)
+P4 Status [ * ] : up(1)
+P5 Status [ 2 ] : down(2)
+P6 Status [ 2 ] : down(2)
+P7 Status [ 2 ] : down(2)
+P8 Status [ 2 ] : down(2)
+P9 Status [ 2 ] : down(2)
+P10 Status [ 2 ] : down(2)
+P11 Status [ 2 ] : down(2)
+P12 Status [ 1 ] : up(1)
+P13 Status [ 1 ] : up(1)
+P14 Status [ 2 ] : down(2)
+P15 Status [ 2 ] : down(2)
+P16 Status [ 2 ] : down(2)
+P17 Status [ 2 ] : down(2)
+P18 Status [ 2 ] : down(2)
+P19 Status [ 2 ] : down(2)
+P20 Status [ 2 ] : down(2)
+P21 Status [ 2 ] : down(2)
+P22 Status [ 2 ] : down(2)
+P23 Status [ 2 ] : down(2)
+P24 Status [ 1 ] : up(1)}, test_error{-}, test_had_error{False}
+test{SWITCH 2 - BIT Status}, test_result{PASS}, test_report{Product ID [ * ] : Cisco IOS Software, IE4010 Software (IE4010-UNIVERSALK9-M), Version 15.2(8)E1, RELEASE SOFTWARE (fc8) Technical Support: http://www.cisco.com/techsupport Copyright (c) 1986-2021 by Cisco Systems, Inc. Compiled Tue 12-Oct-21 05:09 by mcpre
+Sensor #1 Temperature State [ 1 ] : normal(1)
+Sensor Power Supply 1A Temperature State [ 1 ] : normal(1)
+Sensor #1 Temperature Value [ * ] : 48
+Sensor Power Supply 1A Temperature Value [ * ] : 50
+PSU1 Supply State [ 1 ] : normal(1)
+PSU1 Supply Source [ 2 ] : ac(2)}, test_error{-}, test_had_error{False}
+test{SWITCH 2 - Ports Status}, test_result{PASS}, test_report{P1 Speed [ 1000000000 ] : 1000000000
+P2 Speed [ 1000000000 ] : 1000000000
+P3 Speed [ 1000000000 ] : 1000000000
+P4 Speed [ 1000000000 ] : 1000000000
+P5 Speed [ 1000000000 ] : 1000000000
+P6 Speed [ 1000000000 ] : 1000000000
+P7 Speed [ 1000000000 ] : 1000000000
+P8 Speed [ * ] : 10000000
+P9 Speed [ * ] : 10000000
+P10 Speed [ * ] : 10000000
+P11 Speed [ * ] : 10000000
+P12 Speed [ 1000000000 ] : 1000000000
+P13 Speed [ * ] : 10000000
+P14 Speed [ * ] : 10000000
+P15 Speed [ * ] : 10000000
+P16 Speed [ * ] : 10000000
+P17 Speed [ * ] : 10000000
+P18 Speed [ * ] : 10000000
+P19 Speed [ * ] : 10000000
+P20 Speed [ * ] : 10000000
+P21 Speed [ * ] : 10000000
+P22 Speed [ * ] : 10000000
+P23 Speed [ * ] : 10000000
+P24 speed [ 1000000000 ] : 1000000000
+P1 Status [ 1 ] : up(1)
+P2 Status [ 1 ] : up(1)
+P3 Status [ 1 ] : up(1)
+P4 Status [ 1 ] : up(1)
+P5 Status [ 1 ] : up(1)
+P6 Status [ 1 ] : up(1)
+P7 Status [ 1 ] : up(1)
+P8 Status [ 2 ] : down(2)
+P9 Status [ 2 ] : down(2)
+P10 Status [ 2 ] : down(2)
+P11 Status [ 2 ] : down(2)
+P12 Status [ 1 ] : up(1)
+P13 Status [ 2 ] : down(2)
+P14 Status [ 2 ] : down(2)
+P15 Status [ 2 ] : down(2)
+P16 Status [ 2 ] : down(2)
+P17 Status [ 2 ] : down(2)
+P18 Status [ 2 ] : down(2)
+P19 Status [ 2 ] : down(2)
+P20 Status [ 2 ] : down(2)
+P21 Status [ 2 ] : down(2)
+P22 Status [ 2 ] : down(2)
+P23 Status [ 2 ] : down(2)
+P24 Status [ 1 ] : up(1)}, test_error{-}, test_had_error{False}
+test{SWITCH 3 - BIT Status}, test_result{PASS}, test_report{Product ID [ * ] : Cisco IOS Software, IE4010 Software (IE4010-UNIVERSALK9-M), Version 15.2(8)E1, RELEASE SOFTWARE (fc8) Technical Support: http://www.cisco.com/techsupport Copyright (c) 1986-2021 by Cisco Systems, Inc. Compiled Tue 12-Oct-21 05:09 by mcpre
+Sensor #1 Temperature State [ 1 ] : normal(1)
+Sensor Power Supply 1A Temperature State [ 1 ] : normal(1)
+Sensor #1 Temperature Value [ * ] : 48
+Sensor Power Supply 1A Temperature Value [ * ] : 50
+PSU1 Supply State [ 1 ] : normal(1)
+PSU1 Supply Source [ 2 ] : ac(2)}, test_error{-}, test_had_error{False}
+test{SWITCH 3 - Ports Status}, test_result{PASS}, test_report{P1 Speed [ * ] : 10000000
+P2 Speed [ * ] : 10000000
+P3 Speed [ 1000000000 ] : 1000000000
+P4 Speed [ * ] : 10000000
+P5 Speed [ * ] : 10000000
+P6 Speed [ 1000000000 ] : 1000000000
+P7 Speed [ * ] : 10000000
+P8 Speed [ * ] : 10000000
+P9 Speed [ 1000000000 ] : 1000000000
+P10 Speed [ * ] : 10000000
+P11 Speed [ * ] : 10000000
+P12 Speed [ 1000000000 ] : 1000000000
+P13 Speed [ * ] : 10000000
+P14 Speed [ * ] : 10000000
+P15 Speed [ * ] : 10000000
+P16 Speed [ * ] : 10000000
+P17 Speed [ * ] : 10000000
+P18 Speed [ * ] : 10000000
+P19 Speed [ * ] : 10000000
+P20 Speed [ * ] : 10000000
+P21 Speed [ * ] : 10000000
+P22 Speed [ * ] : 10000000
+P23 Speed [ * ] : 10000000
+P24 speed [ * ] : 10000000
+P1 Status [ 2 ] : down(2)
+P2 Status [ 2 ] : down(2)
+P3 Status [ 1 ] : up(1)
+P4 Status [ 2 ] : down(2)
+P5 Status [ 2 ] : down(2)
+P6 Status [ 1 ] : up(1)
+P7 Status [ 2 ] : down(2)
+P8 Status [ 2 ] : down(2)
+P9 Status [ 1 ] : up(1)
+P10 Status [ 2 ] : down(2)
+P11 Status [ 2 ] : down(2)
+P12 Status [ 1 ] : up(1)
+P13 Status [ 2 ] : down(2)
+P14 Status [ 2 ] : down(2)
+P15 Status [ 2 ] : down(2)
+P16 Status [ 2 ] : down(2)
+P17 Status [ 2 ] : down(2)
+P18 Status [ 2 ] : down(2)
+P19 Status [ 2 ] : down(2)
+P20 Status [ 2 ] : down(2)
+P21 Status [ 2 ] : down(2)
+P22 Status [ 2 ] : down(2)
+P23 Status [ 2 ] : down(2)
+P24 Status [ 2 ] : down(2)}, test_error{-}, test_had_error{False}
+test{NAS - Computer Unit PBIT}, test_result{PASS}, test_report{BIOS Vendor: American Megatrends Inc.
+BIOS Version: 3.8b
+BIOS Date: 01/05/2023}, test_error{-}, test_had_error{False}
+test{NAS - Ram Test}, test_result{PASS}, test_report{Number of iterations: 1
+List of tests:
+StuckAddress = ok
+WalkingOnes = ok
+WalkingZeroes = ok
+8-bitWrites = ok
+16-bitWrites = ok
+Test completed successfully!}, test_error{-}, test_had_error{False}
+test{NAS - Ram PBIT}, test_result{PASS}, test_report{Number of banks: 8
+bank: P0 Node0 Channel0 Dimm0
+Bank memory size : 16384 Mb
+bank: P0 Node0 Channel1 Dimm0
+Bank memory size : 16384 Mb
+bank: P0 Node1 Channel0 Dimm0
+Bank memory size : 0 Mb
+bank: P0 Node1 Channel1 Dimm0
+Bank memory size : 0 Mb
+bank: P1 Node0 Channel0 Dimm0
+Bank memory size : 16384 Mb
+bank: P1 Node0 Channel1 Dimm0
+Bank memory size : 16384 Mb
+bank: P1 Node1 Channel0 Dimm0
+Bank memory size : 0 Mb
+bank: P1 Node1 Channel1 Dimm0
+Bank memory size : 0 Mb
+Total memory size	: 65536 Mb}, test_error{-}, test_had_error{False}
+test{NAS - SATA Flash Module PBIT (Disk 1)}, test_result{PASS}, test_report{PASS}, test_error{-}, test_had_error{False}
+test{NAS - SATA Flash Module PBIT (Disk 2)}, test_result{PASS}, test_report{PASS}, test_error{-}, test_had_error{False}
+test{NAS - SATA Flash Module Info (Disk 1)}, test_result{PASS}, test_report{Ata Version: ACS-4 T13/BSR INCITS 529 revision 5
+Capacity: 1,920,383,410,176 bytes [1.92 TB]
+Firmware Version: JXTC304Q
+Model: SAMSUNG MZ7L31T9HBLT-00A07
+Rotation Rate: Solid State Device
+Sata Version: SATA 3.2, 6.0 Gb/s (current: 1.5 Gb/s)
+Serial Number: S6ESNG0TB04688}, test_error{-}, test_had_error{False}
+test{NAS - SATA Flash Module Info (Disk 2)}, test_result{PASS}, test_report{Ata Version: ACS-4 T13/BSR INCITS 529 revision 5
+Capacity: 1,920,383,410,176 bytes [1.92 TB]
+Firmware Version: JXTC304Q
+Model: SAMSUNG MZ7L31T9HBLT-00A07
+Rotation Rate: Solid State Device
+Sata Version: SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Serial Number: S6ESNG0TB04692}, test_error{-}, test_had_error{False}
+test{NAS - ETH0 Link Status}, test_result{PASS}, test_report{Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC1 - PBIT}, test_result{PASS}, test_report{PBIT successfully completed
+UEFI Boot Mode ENABLED
+BIOS Vendor: American Megatrends Inc.
+BIOS Version: 4.03.01
+BIOS Date: 11/24/2022}, test_error{-}, test_had_error{False}
+test{SBC1 - Ram Info}, test_result{PASS}, test_report{Number of iterations: 1
+List of tests:
+StuckAddress = ok
+WalkingOnes = ok
+WalkingZeroes = ok
+8-bitWrites = ok
+16-bitWrites = ok
+Test completed successfully!}, test_error{-}, test_had_error{False}
+test{SBC1 - Ram Test}, test_result{PASS}, test_report{Number of banks: 4
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+Total memory size	: 65536 Mb}, test_error{-}, test_had_error{False}
+test{SBC1 - Sensors Status}, test_result{PASS}, test_report{CPU Core 0 Temperature: 42 C
+CPU Core 10 Temperature: 42 C
+CPU Core 11 Temperature: 42 C
+CPU Core 12 Temperature: 42 C
+CPU Core 13 Temperature: 42 C
+CPU Core 1 Temperature: 42 C
+CPU Core 2 Temperature: 42 C
+CPU Core 3 Temperature: 42 C
+CPU Core 4 Temperature: 41 C
+CPU Core 5 Temperature: 41 C
+CPU Core 8 Temperature: 41 C
+CPU Core 9 Temperature: 41 C
+Package id 0 Temperature: 42 C
+loc1 temp: 40 C}, test_error{-}, test_had_error{False}
+test{SBC1 - ETH0 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:19
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC1 - ETH1 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:29
+Status:	DOWN
+Mode:	FULL duplex
+Speed:	100 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC1 - ETH2 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:39
+Status:	DOWN
+Mode:	FULL duplex
+Speed:	100 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC2 - PBIT}, test_result{PASS}, test_report{PBIT successfully completed
+UEFI Boot Mode ENABLED
+BIOS Vendor: American Megatrends Inc.
+BIOS Version: 4.03.01
+BIOS Date: 11/24/2022}, test_error{-}, test_had_error{False}
+test{SBC2 - Ram Info}, test_result{PASS}, test_report{Number of iterations: 1
+List of tests:
+StuckAddress = ok
+WalkingOnes = ok
+WalkingZeroes = ok
+8-bitWrites = ok
+16-bitWrites = ok
+Test completed successfully!}, test_error{-}, test_had_error{False}
+test{SBC2 - Ram Test}, test_result{PASS}, test_report{Number of banks: 4
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+Total memory size	: 65536 Mb}, test_error{-}, test_had_error{False}
+test{SBC2 - Sensors Status}, test_result{PASS}, test_report{CPU Core 0 Temperature: 42 C
+CPU Core 10 Temperature: 42 C
+CPU Core 11 Temperature: 42 C
+CPU Core 12 Temperature: 42 C
+CPU Core 13 Temperature: 42 C
+CPU Core 1 Temperature: 42 C
+CPU Core 2 Temperature: 42 C
+CPU Core 3 Temperature: 42 C
+CPU Core 4 Temperature: 41 C
+CPU Core 5 Temperature: 41 C
+CPU Core 8 Temperature: 41 C
+CPU Core 9 Temperature: 41 C
+Package id 0 Temperature: 42 C
+loc1 temp: 40 C}, test_error{-}, test_had_error{False}
+test{SBC2 - ETH0 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:17
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC2 - ETH1 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:27
+Status:	DOWN
+Mode:	FULL duplex
+Speed:	100 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC2 - ETH2 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:37
+Status:	DOWN
+Mode:	FULL duplex
+Speed:	100 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC3 - PBIT}, test_result{PASS}, test_report{PBIT successfully completed
+UEFI Boot Mode ENABLED
+BIOS Vendor: American Megatrends Inc.
+BIOS Version: 4.03.01
+BIOS Date: 11/24/2022}, test_error{-}, test_had_error{False}
+test{SBC3 - Ram Info}, test_result{PASS}, test_report{Number of iterations: 1
+List of tests:
+StuckAddress = ok
+WalkingOnes = ok
+WalkingZeroes = ok
+8-bitWrites = ok
+16-bitWrites = ok
+Test completed successfully!}, test_error{-}, test_had_error{False}
+test{SBC3 - Ram Test}, test_result{PASS}, test_report{Number of banks: 4
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+Total memory size	: 65536 Mb}, test_error{-}, test_had_error{False}
+test{SBC3 - Sensors Status}, test_result{PASS}, test_report{CPU Core 0 Temperature: 42 C
+CPU Core 10 Temperature: 42 C
+CPU Core 11 Temperature: 42 C
+CPU Core 12 Temperature: 42 C
+CPU Core 13 Temperature: 42 C
+CPU Core 1 Temperature: 42 C
+CPU Core 2 Temperature: 42 C
+CPU Core 3 Temperature: 42 C
+CPU Core 4 Temperature: 41 C
+CPU Core 5 Temperature: 41 C
+CPU Core 8 Temperature: 41 C
+CPU Core 9 Temperature: 41 C
+Package id 0 Temperature: 42 C
+loc1 temp: 40 C}, test_error{-}, test_had_error{False}
+test{SBC3 - ETH0 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:16
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC3 - ETH1 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:26
+Status:	DOWN
+Mode:	FULL duplex
+Speed:	100 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC3 - ETH2 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:36
+Status:	DOWN
+Mode:	FULL duplex
+Speed:	100 Mb/s}, test_error{-}, test_had_error{False}
+test{SERVER - PBIT}, test_result{PASS}, test_report{PBIT successfully completed
+UEFI Boot Mode ENABLED
+BIOS Vendor: American Megatrends Inc.
+BIOS Version: 4.03.01
+BIOS Date: 11/24/2022}, test_error{-}, test_had_error{False}
+test{SERVER - Ram Info}, test_result{PASS}, test_report{Number of iterations: 1
+List of tests:
+StuckAddress = ok
+WalkingOnes = ok
+WalkingZeroes = ok
+8-bitWrites = ok
+16-bitWrites = ok
+Test completed successfully!}, test_error{-}, test_had_error{False}
+test{SERVER - Ram Test}, test_result{PASS}, test_report{Number of banks: 4
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+Total memory size	: 65536 Mb}, test_error{-}, test_had_error{False}
+test{SERVER - Sensors Status}, test_result{PASS}, test_report{CPU Core 0 Temperature: 42 C
+CPU Core 10 Temperature: 42 C
+CPU Core 11 Temperature: 42 C
+CPU Core 12 Temperature: 42 C
+CPU Core 13 Temperature: 42 C
+CPU Core 1 Temperature: 42 C
+CPU Core 2 Temperature: 42 C
+CPU Core 3 Temperature: 42 C
+CPU Core 4 Temperature: 41 C
+CPU Core 5 Temperature: 41 C
+CPU Core 8 Temperature: 41 C
+CPU Core 9 Temperature: 41 C
+Package id 0 Temperature: 42 C
+loc1 temp: 40 C}, test_error{-}, test_had_error{False}
+test{SERVER - ETH0 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:55
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{WS1 - PBIT}, test_result{PASS}, test_report{PBIT successfully completed
+UEFI Boot Mode ENABLED
+BIOS Vendor: American Megatrends Inc.
+BIOS Version: 4.03.01
+BIOS Date: 11/24/2022}, test_error{-}, test_had_error{False}
+test{WS1 - Ram Info}, test_result{PASS}, test_report{Number of iterations: 1
+List of tests:
+StuckAddress = ok
+WalkingOnes = ok
+WalkingZeroes = ok
+8-bitWrites = ok
+16-bitWrites = ok
+Test completed successfully!}, test_error{-}, test_had_error{False}
+test{WS1 - Ram Test}, test_result{PASS}, test_report{Number of banks: 4
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+Total memory size	: 65536 Mb}, test_error{-}, test_had_error{False}
+test{WS1 - Sensors Status}, test_result{PASS}, test_report{CPU Core 0 Temperature: 42 C
+CPU Core 10 Temperature: 42 C
+CPU Core 11 Temperature: 42 C
+CPU Core 12 Temperature: 42 C
+CPU Core 13 Temperature: 42 C
+CPU Core 1 Temperature: 42 C
+CPU Core 2 Temperature: 42 C
+CPU Core 3 Temperature: 42 C
+CPU Core 4 Temperature: 41 C
+CPU Core 5 Temperature: 41 C
+CPU Core 8 Temperature: 41 C
+CPU Core 9 Temperature: 41 C
+Package id 0 Temperature: 42 C
+loc1 temp: 40 C}, test_error{-}, test_had_error{False}
+test{WS1 - ETH0 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:16
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{WS1 - ETH1 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:26
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{NAS - ETH1 Link Status}, test_result{PASS}, test_report{Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{NAS - Sensors Temperatures}, test_result{PASS}, test_report{CPU2 Core 0 Temperature: 42 C
+CPU2 Core 10 Temperature: 42 C
+CPU2 Core 11 Temperature: 41 C
+CPU2 Core 12 Temperature: 42 C
+CPU2 Core 1 Temperature: 42 C
+CPU2 Core 2 Temperature: 42 C
+CPU2 Core 3 Temperature: 42 C
+CPU2 Core 4 Temperature: 42 C
+CPU2 Core 8 Temperature: 43 C
+CPU2 Core 9 Temperature: 40 C
+Package id 2 Temperature: 44 C
+CPU1 Core 0 Temperature: 49 C
+CPU1 Core 10 Temperature: 48 C
+CPU1 Core 11 Temperature: 49 C
+CPU1 Core 12 Temperature: 47 C
+CPU1 Core 1 Temperature: 48 C
+CPU1 Core 2 Temperature: 49 C
+CPU1 Core 3 Temperature: 47 C
+CPU1 Core 4 Temperature: 48 C
+CPU1 Core 8 Temperature: 48 C
+CPU1 Core 9 Temperature: 49 C
+Package id 1 Temperature: 50 C
+loc1 Temperature: 52 C
+Power 1 in W: 4.29497e+06 W}, test_error{-}, test_had_error{False}
+test{NAS - Temperatures Status [C]}, test_result{PASS}, test_report{CPU1 Temp: 45.000
+CPU2 Temp: 51.000
+P1-DIMMA1 Temp: 32.000
+P2-DIMMA1 Temp: 34.000
+PCH Temp: 40.000
+Peripheral Temp: 44.000
+System Temp: 33.000
+VRMCpu1IN Temp: 37.000
+VRMCpu1IO Temp: 33.000
+VRMCpu2IN Temp: 48.000
+VRMCpu2IO Temp: 38.000
+VRMP1AB Temp: 32.000
+VRMP1DE Temp: 36.000
+VRMP2AB Temp: 39.000
+VRMP2DE Temp: 40.000}, test_error{-}, test_had_error{False}
+test{NAS - Fans Status [rpm]}, test_result{PASS}, test_report{FAN1: 1300.000
+FAN2: 1300.000
+FAN3: 8300.000
+FAN4: 8200.000
+FAN5: 8200.000
+FAN6: 8400.000
+FANA: 8100.000
+FANB: 8300.000}, test_error{-}, test_had_error{False}
+test{NAS - Voltages Status [V]}, test_result{PASS}, test_report{1.05V PCH: 1.041
+1.8V PCH: 1.797
+12V: 11.916
+3.3VCC: 3.333
+3.3VSB: 3.350
+5VCC: 4.978
+5VSB: 5.020
+PVNN PCH: 0.994
+VDimmP1AB: 1.223
+VDimmP1DE: 1.223
+VDimmP2AB: 1.216
+VDimmP2DE: 1.209
+Vcpu1: 1.771
+Vcpu2: 1.753}, test_error{-}, test_had_error{False}
+test{WS2 - PBIT}, test_result{PASS}, test_report{PBIT successfully completed
+UEFI Boot Mode ENABLED
+BIOS Vendor: American Megatrends Inc.
+BIOS Version: 4.03.01
+BIOS Date: 11/24/2022}, test_error{-}, test_had_error{False}
+test{WS2 - Ram Info}, test_result{PASS}, test_report{Number of iterations: 1
+List of tests:
+StuckAddress = ok
+WalkingOnes = ok
+WalkingZeroes = ok
+8-bitWrites = ok
+16-bitWrites = ok
+Test completed successfully!}, test_error{-}, test_had_error{False}
+test{WS2 - Ram Test}, test_result{PASS}, test_report{Number of banks: 4
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+Total memory size	: 65536 Mb}, test_error{-}, test_had_error{False}
+test{WS2 - Sensors Status}, test_result{PASS}, test_report{CPU Core 0 Temperature: 42 C
+CPU Core 10 Temperature: 42 C
+CPU Core 11 Temperature: 42 C
+CPU Core 12 Temperature: 42 C
+CPU Core 13 Temperature: 42 C
+CPU Core 1 Temperature: 42 C
+CPU Core 2 Temperature: 42 C
+CPU Core 3 Temperature: 42 C
+CPU Core 4 Temperature: 41 C
+CPU Core 5 Temperature: 41 C
+CPU Core 8 Temperature: 41 C
+CPU Core 9 Temperature: 41 C
+Package id 0 Temperature: 42 C
+loc1 temp: 40 C}, test_error{-}, test_had_error{False}
+test{WS2 - ETH0 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:14
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{WS2 - ETH1 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:24
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{WS3 - PBIT}, test_result{PASS}, test_report{PBIT successfully completed
+UEFI Boot Mode ENABLED
+BIOS Vendor: American Megatrends Inc.
+BIOS Version: 4.03.01
+BIOS Date: 11/24/2022}, test_error{-}, test_had_error{False}
+test{WS3 - Ram Info}, test_result{PASS}, test_report{Number of iterations: 1
+List of tests:
+StuckAddress = ok
+WalkingOnes = ok
+WalkingZeroes = ok
+8-bitWrites = ok
+16-bitWrites = ok
+Test completed successfully!}, test_error{-}, test_had_error{False}
+test{WS3 - Ram Test}, test_result{PASS}, test_report{Number of banks: 4
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+bank: NODE 1
+Bank memory size : 16384 Mb
+Total memory size	: 65536 Mb}, test_error{-}, test_had_error{False}
+test{WS3 - Sensors Status}, test_result{PASS}, test_report{CPU Core 0 Temperature: 42 C
+CPU Core 10 Temperature: 42 C
+CPU Core 11 Temperature: 42 C
+CPU Core 12 Temperature: 42 C
+CPU Core 13 Temperature: 42 C
+CPU Core 1 Temperature: 42 C
+CPU Core 2 Temperature: 42 C
+CPU Core 3 Temperature: 42 C
+CPU Core 4 Temperature: 41 C
+CPU Core 5 Temperature: 41 C
+CPU Core 8 Temperature: 41 C
+CPU Core 9 Temperature: 41 C
+Package id 0 Temperature: 42 C
+loc1 temp: 40 C}, test_error{-}, test_had_error{False}
+test{WS3 - ETH0 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:12
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{WS3 - ETH1 Link Status}, test_result{PASS}, test_report{Driver: igb
+Version: 5.10.106-finx-llc-x86 64
+Firmware Rev: 1.63, 0x80000e34
+Bus Info: 0000:0b:00.0
+MAC Address: 00:40:9E:06:F2:22
+Status:	UP
+Mode:	FULL duplex
+Speed:	1000 Mb/s}, test_error{-}, test_had_error{False}
+test{SBC1 - M2 Disk Test}, test_result{PASS}, test_report{-------------------
+SBC1 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+SBC1 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79302784
+Unallocated Capacity: 0
+
+}, test_error{-------------------
+SBC1 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+SBC1 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79302784
+Unallocated Capacity: 0
+
+}, test_had_error{False}
+test{SBC2 - M2 Disk Test}, test_result{PASS}, test_report{-------------------
+SBC2 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+SBC2 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79302222
+Unallocated Capacity: 0
+
+}, test_error{-------------------
+SBC2 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+SBC2 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79302222
+Unallocated Capacity: 0
+
+}, test_had_error{False}
+test{SBC3 - M2 Disk Test}, test_result{PASS}, test_report{-------------------
+SBC3 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+SBC3 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79302294
+Unallocated Capacity: 0
+
+}, test_error{-------------------
+SBC3 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+SBC3 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79302294
+Unallocated Capacity: 0
+
+}, test_had_error{False}
+test{WS1 - M2 Disk Test}, test_result{PASS}, test_report{-------------------
+WS1 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+WS1 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79303985
+Unallocated Capacity: 0
+
+}, test_error{-------------------
+WS1 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+WS1 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79303985
+Unallocated Capacity: 0
+
+}, test_had_error{False}
+test{SERVER - M2 Disk Test}, test_result{PASS}, test_report{-------------------
+SERVER - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+SERVER - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79302984
+Unallocated Capacity: 0
+
+}, test_error{-------------------
+SERVER - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+SERVER - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79302984
+Unallocated Capacity: 0
+
+}, test_had_error{False}
+test{WS2 - M2 Disk Test}, test_result{PASS}, test_report{-------------------
+WS2 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+WS2 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79309321
+Unallocated Capacity: 0
+
+}, test_error{-------------------
+WS2 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+WS2 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79309321
+Unallocated Capacity: 0
+
+}, test_had_error{False}
+test{WS3 - M2 Disk Test}, test_result{PASS}, test_report{-------------------
+WS3 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+WS3 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79303984
+Unallocated Capacity: 0
+
+}, test_error{-------------------
+WS3 - M2 SMART Overall Health
+-------------------
+Timestamp: Fri Jun 13 16:08:33 2025
+Result: PASS
+
+Report: 
+PASS
+
+-------------------
+WS3 - M2 Info
+-------------------
+Timestamp: Fri Jun 13 16:08:34 2025
+Result: PASS
+
+Report: 
+Capacity: 960,197,124,096 [960 GB]
+Firmware Version: GECE1BB3
+Model: 960GB ArmourDrive
+NVMeVersion: 1.3
+Serial Number: 909D371F742C79303984
+Unallocated Capacity: 0
+
+}, test_had_error{False}

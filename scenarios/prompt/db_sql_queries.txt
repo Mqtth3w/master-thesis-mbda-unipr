@@ -1,0 +1,6 @@
+# extract all the useful data form the db test
+
+select a.type, a.testID, a.testStatus, a.testResult, a.error, a.report,
+b.testCode, b.testLabel, b.subsystemID, b.subsystemLabel 
+from notifications as a join testIdVocabulary as b 
+where a.testID = b.testCode

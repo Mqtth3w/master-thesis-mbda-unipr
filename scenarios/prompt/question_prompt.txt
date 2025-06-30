@@ -1,0 +1,116 @@
+Below a system architecture description with its components and ports/interfaces status. 
+Please, complete your task of analysis of all the tests according to your system prompt.
+
+System architecture: 
+GWS1:
+Interface eth0 expected status: up(1)
+GWS2:
+Interface eth0 expected status: up(1)
+GWS3:
+Interface eth0 expected status: up(1)
+NAS:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: up(1)
+SWITCH1:
+Port P1 expected status: up(1)
+Port P2 expected status: up(1)
+Port P3 expected status: up(1)
+Port P4 expected status: down(2)
+Port P5 expected status: down(2)
+Port P6 expected status: down(2)
+Port P7 expected status: down(2)
+Port P8 expected status: down(2)
+Port P9 expected status: down(2)
+Port P10 expected status: down(2)
+Port P11 expected status: down(2)
+Port P12 expected status: up(1)
+Port P13 expected status: up(1)
+Port P14 expected status: down(2)
+Port P15 expected status: down(2)
+Port P16 expected status: down(2)
+Port P17 expected status: down(2)
+Port P18 expected status: down(2)
+Port P19 expected status: down(2)
+Port P20 expected status: down(2)
+Port P21 expected status: down(2)
+Port P22 expected status: down(2)
+Port P23 expected status: down(2)
+Port P24 expected status: up(1)
+SWITCH2:
+Port P1 expected status: up(1)
+Port P2 expected status: up(1)
+Port P3 expected status: up(1)
+Port P4 expected status: up(1)
+Port P5 expected status: up(1)
+Port P6 expected status: up(1)
+Port P7 expected status: up(1)
+Port P8 expected status: down(2)
+Port P9 expected status: down(2)
+Port P10 expected status: down(2)
+Port P11 expected status: down(2)
+Port P12 expected status: up(1)
+Port P13 expected status: down(2)
+Port P14 expected status: down(2)
+Port P15 expected status: down(2)
+Port P16 expected status: down(2)
+Port P17 expected status: down(2)
+Port P18 expected status: down(2)
+Port P19 expected status: down(2)
+Port P20 expected status: down(2)
+Port P21 expected status: down(2)
+Port P22 expected status: down(2)
+Port P23 expected status: down(2)
+Port P24 expected status: up(1)
+SWITCH3:
+Port P1 expected status: down(2)
+Port P2 expected status: down(2)
+Port P3 expected status: up(1)
+Port P4 expected status: down(2)
+Port P5 expected status: down(2)
+Port P6 expected status: up(1)
+Port P7 expected status: down(2)
+Port P8 expected status: down(2)
+Port P9 expected status: up(1)
+Port P10 expected status: down(2)
+Port P11 expected status: down(2)
+Port P12 expected status: up(1)
+Port P13 expected status: down(2)
+Port P14 expected status: down(2)
+Port P15 expected status: down(2)
+Port P16 expected status: down(2)
+Port P17 expected status: down(2)
+Port P18 expected status: down(2)
+Port P19 expected status: down(2)
+Port P20 expected status: down(2)
+Port P21 expected status: down(2)
+Port P22 expected status: down(2)
+Port P23 expected status: down(2)
+Port P24 expected status: down(2)
+SBC1:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: down(2)
+Interface eth2 expected status: down(2)
+SBC2:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: down(2)
+Interface eth2 expected status: down(2)
+SBC3:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: down(2)
+Interface eth2 expected status: down(2)
+WS1:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: up(1)
+WS2:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: up(1)
+WS3:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: up(1)
+SERVER:
+Interface eth0 expected status: up(1)
+
+Tests and results:
+
+
+
