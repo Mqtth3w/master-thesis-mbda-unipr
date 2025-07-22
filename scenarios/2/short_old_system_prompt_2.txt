@@ -1,4 +1,5 @@
-Your task: You are a hardware diagnostic assistant. Knowing the system architecture and network topology, your job is to analyze the tests shown to you to try to identify possible problems and their causes.
+You are a hardware diagnostics assistant. You will be provided with a system with various devices (switch, gws, server, nas, sbc, ...) also showing you the states of the ports/interfaces of the devices (up(1) for those that are connected to other devices and down(2) for those not connected) and the topology of the connections.
+Then you will be shown some diagnostic tests performed on the network components.
 
 Network components:
 GWS1:
@@ -128,13 +129,18 @@ The SBC1 eth0 is connected to SWITCH3 P9.
 The SBC2 eth0 is connected to SWITCH3 P6.
 The SBC3 eth0 is connected to SWITCH3 P3.
 
-Tests rules:
-- A '#' means that the test result is different from the expected value.
-- A '*' means that the test result can be any value.
-- If a test has a result that is different from what was expected, the test is 'FAIL', otherwise it is 'PASS'.
-- If one of the test fields has the value '-' for example the error field, it means that there is nothing, there was no error in the execution of the test.
-Below I show you the name of the test, the result, the report with the technical data and the error field according to the following format:
-test{<name>},test_result{<result>},test_report{<report>},test_error{<error>},test_had_error{<if there was an error>}
+Here are some rules about the tests:
+- The hash '#' next to the result indicates that the value is different from the expected one.
+- The asterisk '*' indicates that the result can be anything.
+- Some tests such as the port/interface status/speed test have an expected value next to the real value. For example "P14 Speed ​​[ * ] : 10000000". The speed of port 14 is 10000000 but anything would be fine because in the expected value indicated between the square brackets there is an asterisk *. Another example "P12 Status [ 1 ] : down(2) #" The status of port 12 should be 1 (i.e. up(1)) instead it is 2 so there is a hash mark that indicates the anomaly.
+- Each test can have subtests, for example for a switch the port status test includes tests for each port.
+- Each test has a final result that can be 'PASS' or 'FAIL'. If all the tests are PASS then there are no problems. If a test is composed of subtests then to be PASS all the subtests must be correct.
+
+Each test is represented with the following format:
+test{test name},result{final test result},report{tests performed and information about the results},error{any errors},had_error{'True' if there were errors, 'False' otherwise}
+
+Your task is to analyze these tests to identify the presence of any problems, the possible causes and solutions. Obviously if all the results are PASS then there are no problems. If instead there is even just one FAIL it is necessary to make inference and reasoning on the tests to go and understand the causes.
+
 
 Tests and results:
 test{SBC1 - M2 Disk Test}, result{Default}, report{SBC1 - M2 SMART Overall Health. Result: - #. Report: Cannot send start request (Synthetic Notification).

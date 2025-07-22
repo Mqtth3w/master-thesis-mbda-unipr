@@ -43,13 +43,22 @@ def db_parse(db, out, pbit):
                                             re.findall(r"SBC1", testID) or re.findall(r"NAS", testID) or 
                                             re.findall(r"WS1", testID) or re.findall(r"SWITCH1", testID) or
                                             re.findall(r"SWITCH2", testID) or re.findall(r"SWITCH3", testID)):
+            
+            output = (
+                '{"test":'f'{testLabel},'
+                f'"result":{result_str},'
+                f'"report":{report if pbit else reportLabel},'
+                f'"error":{errorLabel},'
+                f'"had_error":{had_error}''},'
+                )
+            '''
             output = (
                 f"test{{{testLabel}}}, "
                 f"result{{{result_str}}}, "
                 f"report{{{report if pbit else reportLabel}}}, "
                 f"error{{{errorLabel}}}, "
-                f"had_error{{{had_error}}}\n"
-            )
+                f"had_error{{{had_error}} }\n"
+            )'''
             with open(out, 'a', encoding='utf-8') as f:
                 f.write(output)
             print(output)
@@ -59,5 +68,5 @@ if __name__ == "__main__":
     dbs = ["/report_20250613_16h08m27s", "/report_20250613_16h38m36s", 
            "/report_20250613_16h45m34s"]
     for i in range(1, 4):
-        db_parse(f"../{i}{dbs[i-1]}", f"short_pbit_output_{i}.txt", True)
+        db_parse(f"../{i}{dbs[i-1]}", f"short_pbit_json_output_{i}.txt", True)
     
