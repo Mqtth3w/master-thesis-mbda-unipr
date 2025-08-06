@@ -1,9 +1,0 @@
-{"test":SBC1 - PBIT,"result":Default,"report":-,"error":Cannot send start request (Synthetic Notification),"had_error":True},{"test":SBC1 - PBIT,"result":Default,"report":-,"error":Cannot send stop request (Synthetic Notification),"had_error":True},{"test":WS1 - PBIT,"result":Default,"report":-,"error":Cannot send start request (Synthetic Notification),"had_error":True},{"test":WS1 - PBIT,"result":Default,"report":-,"error":Cannot send stop request (Synthetic Notification),"had_error":True},{"test":GWS1 - Computer Unit PBIT,"result":PASS,"report":BIOS Vendor: American Megatrends International, LLC.
-BIOS Version: 5.19
-BIOS Date: 03/14/2023,"error":-,"had_error":False},{"test":GWS1 - SATA Flash Module PBIT,"result":PASS,"report":PASS,"error":-,"had_error":False},{"test":NAS - Computer Unit PBIT,"result":PASS,"report":BIOS Vendor: American Megatrends Inc.
-BIOS Version: 3.8b
-BIOS Date: 01/05/2023,"error":-,"had_error":False},{"test":NAS - SATA Flash Module PBIT (Disk 1),"result":PASS,"report":PASS,"error":-,"had_error":False},{"test":NAS - SATA Flash Module PBIT (Disk 2),"result":PASS,"report":PASS,"error":-,"had_error":False},{"test":SERVER - PBIT,"result":PASS,"report":PBIT successfully completed
-UEFI Boot Mode ENABLED
-BIOS Vendor: American Megatrends Inc.
-BIOS Version: 4.03.01
-BIOS Date: 11/24/2022,"error":-,"had_error":False},
