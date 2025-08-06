@@ -1,0 +1,144 @@
+Your task: You are a hardware diagnostic assistant. Knowing the system architecture and network topology, your job is to analyze the tests shown to you to try to identify possible problems and their causes.
+
+Network components:
+GWS1:
+  - Interface eth0 expected status: up(1)
+GWS2:
+  - Interface eth0 expected status: up(1)
+GWS3:
+  - Interface eth0 expected status: up(1)
+NAS:
+  - Interface eth0 expected status: up(1)
+  - Interface eth1 expected status: up(1)
+SWITCH1:
+  - Port P1 expected status: up(1)
+  - Port P2 expected status: up(1)
+  - Port P3 expected status: up(1)
+  - Port P4 expected status: down(2)
+  - Port P5 expected status: down(2)
+  - Port P6 expected status: down(2)
+  - Port P7 expected status: down(2)
+  - Port P8 expected status: down(2)
+  - Port P9 expected status: down(2)
+  - Port P10 expected status: down(2)
+  - Port P11 expected status: down(2)
+  - Port P12 expected status: up(1)
+  - Port P13 expected status: up(1)
+  - Port P14 expected status: down(2)
+  - Port P15 expected status: down(2)
+  - Port P16 expected status: down(2)
+  - Port P17 expected status: down(2)
+  - Port P18 expected status: down(2)
+  - Port P19 expected status: down(2)
+  - Port P20 expected status: down(2)
+  - Port P21 expected status: down(2)
+  - Port P22 expected status: down(2)
+  - Port P23 expected status: down(2)
+  - Port P24 expected status: up(1)
+SWITCH2:
+  - Port P1 expected status: up(1)
+  - Port P2 expected status: up(1)
+  - Port P3 expected status: up(1)
+  - Port P4 expected status: up(1)
+  - Port P5 expected status: up(1)
+  - Port P6 expected status: up(1)
+  - Port P7 expected status: up(1)
+  - Port P8 expected status: down(2)
+  - Port P9 expected status: down(2)
+  - Port P10 expected status: down(2)
+  - Port P11 expected status: down(2)
+  - Port P12 expected status: up(1)
+  - Port P13 expected status: down(2)
+  - Port P14 expected status: down(2)
+  - Port P15 expected status: down(2)
+  - Port P16 expected status: down(2)
+  - Port P17 expected status: down(2)
+  - Port P18 expected status: down(2)
+  - Port P19 expected status: down(2)
+  - Port P20 expected status: down(2)
+  - Port P21 expected status: down(2)
+  - Port P22 expected status: down(2)
+  - Port P23 expected status: down(2)
+  - Port P24 expected status: up(1)
+SWITCH3:
+  - Port P1 expected status: down(2)
+  - Port P2 expected status: down(2)
+  - Port P3 expected status: up(1)
+  - Port P4 expected status: down(2)
+  - Port P5 expected status: down(2)
+  - Port P6 expected status: up(1)
+  - Port P7 expected status: down(2)
+  - Port P8 expected status: down(2)
+  - Port P9 expected status: up(1)
+  - Port P10 expected status: down(2)
+  - Port P11 expected status: down(2)
+  - Port P12 expected status: up(1)
+  - Port P13 expected status: down(2)
+  - Port P14 expected status: down(2)
+  - Port P15 expected status: down(2)
+  - Port P16 expected status: down(2)
+  - Port P17 expected status: down(2)
+  - Port P18 expected status: down(2)
+  - Port P19 expected status: down(2)
+  - Port P20 expected status: down(2)
+  - Port P21 expected status: down(2)
+  - Port P22 expected status: down(2)
+  - Port P23 expected status: down(2)
+  - Port P24 expected status: down(2)
+SBC1:
+  - Interface eth0 expected status: up(1)
+  - Interface eth1 expected status: down(2)
+  - Interface eth2 expected status: down(2)
+SBC2:
+  - Interface eth0 expected status: up(1)
+  - Interface eth1 expected status: down(2)
+  - Interface eth2 expected status: down(2)
+SBC3:
+  - Interface eth0 expected status: up(1)
+  - Interface eth1 expected status: down(2)
+  - Interface eth2 expected status: down(2)
+WS1:
+  - Interface eth0 expected status: up(1)
+  - Interface eth1 expected status: up(1)
+WS2:
+  - Interface eth0 expected status: up(1)
+  - Interface eth1 expected status: up(1)
+WS3:
+  - Interface eth0 expected status: up(1)
+  - Interface eth1 expected status: up(1)
+SERVER:
+  - Interface eth0 expected status: up(1)
+
+Network topology:
+The GWS1 eth0 is connected to SWITCH1 P1.
+The GWS2 eth0 is connected to SWITCH1 P2.
+The GWS3 eth0 is connected to SWITCH1 P3.
+The SERVER eth0 is connected to SWITCH1 P24.
+The NAS eth0 is connected to SWITCH1 P13.
+The NAS eth1 is connected to SWITCH2 P24.
+The SWITCH1 P12 is connected to SWITCH2 P1.
+The SWITCH3 P12 is connected to SWITCH2 P12.
+The WS1 eth0 is connected to SWITCH2 P2.
+The WS1 eth1 is connected to SWITCH2 P3.
+The WS2 eth0 is connected to SWITCH2 P4.
+The WS2 eth1 is connected to SWITCH2 P5.
+The WS3 eth0 is connected to SWITCH2 P6.
+The WS3 eth1 is connected to SWITCH2 P7.
+The SBC1 eth0 is connected to SWITCH3 P9.
+The SBC2 eth0 is connected to SWITCH3 P6.
+The SBC3 eth0 is connected to SWITCH3 P3.
+
+Tests rules:
+- A '#' means that the test result is different from the expected value.
+- A '*' means that the test result can be any value.
+- If a test has a result that is different from what was expected, the test is 'FAIL', otherwise it is 'PASS'.
+- If one of the test fields has the value '-' for example the error field, it means that there is nothing, there was no error in the execution of the test.
+Below I show you the name of the test, the result, the report with the technical data and the error field according to the following format:
+test{<name>},result{<result>},report{<report>},error{<error>},had_error{<if there was an error>}
+
+Tests and results:
+
+
+Logical deduction (what you should do to accomplish your task):
+
+
