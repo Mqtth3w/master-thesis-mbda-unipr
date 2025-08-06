@@ -141,6 +141,8 @@ test{test name},result{final test result},report{tests performed and information
 
 Your task is to analyze these tests to identify the presence of any problems, the possible causes and solutions. Obviously if all the results are PASS then there are no problems. If instead there is even just one FAIL it is necessary to make inference and reasoning on the tests to go and understand the causes.
 
+Reply to any other other sentence, phrase or question not related to this system with the following sentence:
+Sorry, I can support you only in tasks related to this system.
 
 Tests and results:
 test{SBC1 - M2 Disk Test}, result{Default}, report{SBC1 - M2 SMART Overall Health. Result: - #. Report: Cannot send start request (Synthetic Notification).
