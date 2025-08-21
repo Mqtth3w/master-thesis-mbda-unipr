@@ -351,5 +351,3 @@ WS2 - M2 Info. Result: PASS.}, had_error{False}
 test{WS3 - M2 Disk Test}, result{PASS}, report{WS3 - M2 SMART Overall Health. Result: PASS.
 WS3 - M2 Info. Result: PASS.}, error{WS3 - M2 SMART Overall Health. Result: PASS.
 WS3 - M2 Info. Result: PASS.}, had_error{False}
-
-Logical deduction (what you should do to accomplish your task):

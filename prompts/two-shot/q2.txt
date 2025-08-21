@@ -230,5 +230,3 @@ test{NAS - Voltages Status [V]}, result{PASS}, report{-}, error{-}, had_error{Fa
 test{SERVER - M2 Disk Test}, result{PASS}, report{SERVER - M2 SMART Overall Health. Result: PASS.
 SERVER - M2 Info. Result: PASS.}, error{SERVER - M2 SMART Overall Health. Result: PASS.
 SERVER - M2 Info. Result: PASS.}, had_error{False}
-
-Logical deduction (what you should do to accomplish your task):
