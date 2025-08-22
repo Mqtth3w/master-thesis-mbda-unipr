@@ -1,0 +1,205 @@
+Below a system architecture description with its components and ports/interfaces status.
+Please, complete your task of analysis of all the tests according to your system prompt.
+
+System architecture:
+GWS1:
+Interface eth0 expected status: up(1)
+GWS2:
+Interface eth0 expected status: up(1)
+GWS3:
+Interface eth0 expected status: up(1)
+NAS:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: up(1)
+SWITCH1:
+Port P1 expected status: up(1)
+Port P2 expected status: up(1)
+Port P3 expected status: up(1)
+Port P4 expected status: down(2)
+Port P5 expected status: down(2)
+Port P6 expected status: down(2)
+Port P7 expected status: down(2)
+Port P8 expected status: down(2)
+Port P9 expected status: down(2)
+Port P10 expected status: down(2)
+Port P11 expected status: down(2)
+Port P12 expected status: up(1)
+Port P13 expected status: up(1)
+Port P14 expected status: down(2)
+Port P15 expected status: down(2)
+Port P16 expected status: down(2)
+Port P17 expected status: down(2)
+Port P18 expected status: down(2)
+Port P19 expected status: down(2)
+Port P20 expected status: down(2)
+Port P21 expected status: down(2)
+Port P22 expected status: down(2)
+Port P23 expected status: down(2)
+Port P24 expected status: up(1)
+SWITCH2:
+Port P1 expected status: up(1)
+Port P2 expected status: up(1)
+Port P3 expected status: up(1)
+Port P4 expected status: up(1)
+Port P5 expected status: up(1)
+Port P6 expected status: up(1)
+Port P7 expected status: up(1)
+Port P8 expected status: down(2)
+Port P9 expected status: down(2)
+Port P10 expected status: down(2)
+Port P11 expected status: down(2)
+Port P12 expected status: up(1)
+Port P13 expected status: down(2)
+Port P14 expected status: down(2)
+Port P15 expected status: down(2)
+Port P16 expected status: down(2)
+Port P17 expected status: down(2)
+Port P18 expected status: down(2)
+Port P19 expected status: down(2)
+Port P20 expected status: down(2)
+Port P21 expected status: down(2)
+Port P22 expected status: down(2)
+Port P23 expected status: down(2)
+Port P24 expected status: up(1)
+SWITCH3:
+Port P1 expected status: down(2)
+Port P2 expected status: down(2)
+Port P3 expected status: up(1)
+Port P4 expected status: down(2)
+Port P5 expected status: down(2)
+Port P6 expected status: up(1)
+Port P7 expected status: down(2)
+Port P8 expected status: down(2)
+Port P9 expected status: up(1)
+Port P10 expected status: down(2)
+Port P11 expected status: down(2)
+Port P12 expected status: up(1)
+Port P13 expected status: down(2)
+Port P14 expected status: down(2)
+Port P15 expected status: down(2)
+Port P16 expected status: down(2)
+Port P17 expected status: down(2)
+Port P18 expected status: down(2)
+Port P19 expected status: down(2)
+Port P20 expected status: down(2)
+Port P21 expected status: down(2)
+Port P22 expected status: down(2)
+Port P23 expected status: down(2)
+Port P24 expected status: down(2)
+SBC1:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: down(2)
+Interface eth2 expected status: down(2)
+SBC2:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: down(2)
+Interface eth2 expected status: down(2)
+SBC3:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: down(2)
+Interface eth2 expected status: down(2)
+WS1:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: up(1)
+WS2:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: up(1)
+WS3:
+Interface eth0 expected status: up(1)
+Interface eth1 expected status: up(1)
+SERVER:
+Interface eth0 expected status: up(1)
+
+Tests and results:
+{"test":"SBC1 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC1 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC1 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC1 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC1 - ETH2 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC1 - ETH2 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC2 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC2 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC2 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC2 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC2 - ETH2 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC2 - ETH2 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC3 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC3 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC3 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC3 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC3 - ETH2 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"SBC3 - ETH2 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"WS1 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"WS1 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"WS1 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"WS1 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"WS2 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"WS2 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"WS2 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"WS2 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"WS3 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"WS3 - ETH0 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"WS3 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send start request (Synthetic Notification)","had_error":"True"}
+{"test":"WS3 - ETH1 Link Status","result":"Default","report":"-","error":"Cannot send stop request (Synthetic Notification)","had_error":"True"}
+{"test":"GWS1 - ETH0 Link Status","result":"PASS","report":"Status: UP
+Speed: 1000 Mb/s","error":"-","had_error":"False"}
+{"test":"GWS2 - ETH0 Link Status","result":"PASS","report":"Status: UP
+Speed: 1000 Mb/s","error":"-","had_error":"False"}
+{"test":"GWS3 - ETH0 Link Status","result":"PASS","report":"Status: UP
+Speed: 1000 Mb/s","error":"-","had_error":"False"}
+{"test":"SWITCH 1 - Ports Status","result":"FAIL","report":"P1 Speed [ 1000000000 ] : 1000000000
+P2 Speed [ 1000000000 ] : 1000000000
+P3 Speed [ 1000000000 ] : 1000000000
+P4 Speed [ * ] : 1000000000
+P5 Speed [ * ] : 10000000
+P6 Speed [ * ] : 10000000
+P7 Speed [ * ] : 10000000
+P8 Speed [ * ] : 10000000
+P9 Speed [ * ] : 10000000
+P10 Speed [ * ] : 10000000
+P11 Speed [ * ] : 10000000
+P12 Speed [ 1000000000 ] : 10000000 #
+P13 Speed [ 1000000000 ] : 1000000000
+P14 Speed [ * ] : 10000000
+P15 Speed [ * ] : 10000000
+P16 Speed [ * ] : 10000000
+P17 Speed [ * ] : 10000000
+P18 Speed [ * ] : 10000000
+P19 Speed [ * ] : 10000000
+P20 Speed [ * ] : 10000000
+P21 Speed [ * ] : 10000000
+P22 Speed [ * ] : 10000000
+P23 Speed [ * ] : 10000000
+P24 speed [ 1000000000 ] : 1000000000
+P1 Status [ 1 ] : up(1)
+P2 Status [ 1 ] : up(1)
+P3 Status [ 1 ] : up(1)
+P4 Status [ * ] : up(1)
+P5 Status [ 2 ] : down(2)
+P6 Status [ 2 ] : down(2)
+P7 Status [ 2 ] : down(2)
+P8 Status [ 2 ] : down(2)
+P9 Status [ 2 ] : down(2)
+P10 Status [ 2 ] : down(2)
+P11 Status [ 2 ] : down(2)
+P12 Status [ 1 ] : down(2) #
+P13 Status [ 1 ] : up(1)
+P14 Status [ 2 ] : down(2)
+P15 Status [ 2 ] : down(2)
+P16 Status [ 2 ] : down(2)
+P17 Status [ 2 ] : down(2)
+P18 Status [ 2 ] : down(2)
+P19 Status [ 2 ] : down(2)
+P20 Status [ 2 ] : down(2)
+P21 Status [ 2 ] : down(2)
+P22 Status [ 2 ] : down(2)
+P23 Status [ 2 ] : down(2)
+P24 Status [ 1 ] : up(1)","error":"-","had_error":"False"}
+{"test":"SWITCH 2 - Ports Status","result":"NotExecuted","report":"","error":"-","had_error":"False"}
+{"test":"SWITCH 3 - Ports Status","result":"NotExecuted","report":"GET data error, SNMP++: Transport operation failed","error":"-","had_error":"False"}
+{"test":"NAS - ETH0 Link Status","result":"PASS","report":"Status:	UP
+Speed: 1000 Mb/s","error":"-","had_error":"False"}
+{"test":"SERVER - ETH0 Link Status","result":"PASS","report":"Status:	UP
+Speed:	1000 Mb/s","error":"-","had_error":"False"}
+{"test":"NAS - ETH1 Link Status","result":"FAIL","report":"Status:	DOWN #
+Speed:	1000 Mb/s","error":"-","had_error":"False"}

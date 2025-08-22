@@ -17,7 +17,6 @@ WS2
 WS3
 SERVER
 
-
 Tests and results (in Json format):
 {"test":"GWS1 - Computer Unit PBIT","result":"PASS","report":"BIOS Vendor: American Megatrends International, LLC.
 BIOS Version: 5.19
