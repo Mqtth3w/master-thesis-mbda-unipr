@@ -5,7 +5,7 @@ Here are some rules about the tests:
 - The hash '#' next to the result indicates that the value is different from the expected one.
 - The asterisk '*' indicates that the result can be anything.
 - Each test can have subtets.
-- Each test has a final result that can be 'PASS' or 'FAIL'. If all the tests are PASS then there are no problems. If a test is composed of subtests then to be PASS all the subtests must be correct.
+- Each test has a final result that can be 'Default', 'NotExecuted', 'PASS' or 'FAIL'. If all the tests are PASS then there are no problems. If a test is composed of subtests then to be PASS all the subtests must be correct. If a test is FAIL, NotExecuted or Default there are issues then is necessary to evaluate any possible error.
 
 Each test is represented with the following format:
 {"test":"<test name>","result":"<final test result>","report":"<tests performed and/or information about the results>","error":"<any errors/info>","had_error":"<'True' if there were errors, 'False' otherwise>"}
