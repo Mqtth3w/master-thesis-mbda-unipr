@@ -1,4 +1,4 @@
-Below a system architecture description with its components and ports/interfaces status.
+Below a system architecture description with its components.
 Please, complete your task of analysis of all the tests according to your system prompt.
 
 System components:
