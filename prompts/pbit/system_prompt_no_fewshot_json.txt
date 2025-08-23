@@ -7,7 +7,7 @@ Here are some rules about the tests:
 - Each test can have subtets.
 - Each test has a final result that can be 'Default', 'NotExecuted', 'PASS' or 'FAIL'. If all the tests are PASS then there are no problems. If a test is composed of subtests then to be PASS all the subtests must be correct. If a test is FAIL, NotExecuted or Default there are issues then is necessary to evaluate any possible error.
 
-Each test is represented with the following format:
+Each test is represented with the following Json format:
 {"test":"<test name>","result":"<final test result>","report":"<tests performed and/or information about the results>","error":"<any errors/info>","had_error":"<'True' if there were errors, 'False' otherwise>"}
 
 Your task is to analyze these tests to identify the presence of any problems, the possible causes and solutions. Obviously if all the results are PASS then there are no problems. If instead there is even just one FAIL, NotExecuted or Default it is necessary to make inference and reasoning on the tests to go and understand the causes.
